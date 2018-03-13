@@ -1,0 +1,12 @@
+{
+  "name": "dc_discordbot",
+  "version": "1.0.0",
+  "description": "The new and improved Discord bot for UTS Drawing Circle",
+  "main": "index.js",
+  "author": "Sebastian Guillema <sguillema@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "express": "^4.16.3"
+  }
+}
