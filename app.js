@@ -10,28 +10,13 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 app.listen(3000, () => {
     console.log('Example app listening on port 3000!')
-    let quotes = new Array;
     let games = new Array;
-    let purposes = new Array;
     let doomcounter = 0
     let messagesNuked = 1185;
 
     client.on('ready', () => {
         console.log('I am ready!');
-        quotes.push(
-        "I'm trying to play guitar with my mouth; alalalallala!", 
-        "You can feed five Yinings with that rice.", 
-        "There's a big 'ol mark on my leg.",
-        "No! I don't like it. My soul is being harassed.",
-        "Just grab my brain and put it into a robot.",
-        "They took *imitates pipe inhale* the drug.",
-        "*rotates wrists* Look at my nakedness!",
-        "Season greetings, I’m Yining. I just wanted to draw a bird and whale living together in harmony while smoking a cigar.",
-        "I WILL BE NEXT RONALD MCDONALD BITCHES, SUCK MY McCHICKEN WOOOO!",
-        "I THINK A PIGEON JUST BODY SLAMMED INTO MY SHOE WTF!",
-        "UHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH my butt is dead.",
-        "I WILL BE THE BUTTT WHISPERE![sic]"
-        );
+
         games.push(
             "Nothing",
             "Coldsteel the Hedgeheg",
@@ -41,15 +26,11 @@ app.listen(3000, () => {
             "Pictionary",
             "Etch 'n' Sketch"
             );
-        purposes.push(
-            "To remind Sebastian that he **actually** spent time making a bot to return Yining quotes.",
-            "To be a good robot and give you Yining quotes. lol.",
-            "To pass butter...?"
-        )
-        console.log(quotes);
+
         let changeActivity = () => {client.user.setActivity(games[Math.floor(Math.random()*games.length)])};
         setTimeout(changeActivity, 6000);
         setInterval(changeActivity, 300000);
+
         //Sets avatar
         client.user.setAvatar('./avatar.jpg');
         //Post welcome message
