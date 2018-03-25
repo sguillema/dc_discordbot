@@ -32,63 +32,89 @@ app.listen(3000, () => {
         setInterval(changeActivity, 300000);
 
         //Sets avatar
-        client.user.setAvatar('./avatar.jpg');
+        // client.user.setAvatar('./avatar2.jpg');
         //Post welcome message
-        function postWelcome(){
-            const welcomeChanneliD = "251329560619122690"
-            const welcomeChannel = client.channels.get(welcomeChanneliD)
-            const welcomeMessage = `:heavy_minus_sign: :heavy_minus_sign: 
+        // function postWelcome(){
+        //     const welcomeChanneliD = "251329560619122690"
+        //     const welcomeChannel = client.channels.get(welcomeChanneliD)
+        //     const welcomeMessage = `:heavy_minus_sign: :heavy_minus_sign: 
 
-            :pencil2: :white_circle: :regional_indicator_w: :regional_indicator_e: :regional_indicator_l: :regional_indicator_c: :regional_indicator_o: :regional_indicator_m: :regional_indicator_e: :pencil2: :white_circle: 
-
-
-            \`\`\`Markdown
-
-            Hey Drawers and Circlers!
-
-            We hope you enjoy using the server, before you start participating in chat with others, please have a look at our rules and guidelines below!
-
-            Happy chatting!
-
-            - DC Executive Team
+        //     :pencil2: :white_circle: :regional_indicator_w: :regional_indicator_e: :regional_indicator_l: :regional_indicator_c: :regional_indicator_o: :regional_indicator_m: :regional_indicator_e: :pencil2: :white_circle: 
 
 
-            Rules
-            ======================
-            [1]: Any form of harassment or offensive behaviour will not be tolerated.
-            [2]: No explicit artwork unless otherwise approved by @execs and @moderators.
-            [3]: No excessive spam of visuals and words.
+        //     \`\`\`Markdown
 
-            Community Guidelines
-            ======================
-            [1]: Be nice.
-            [2]: Respect each other's opinions, art and each other.
-            [3]: Be constructive in feedback (people have feelings too).
-            [4]: If possible, keep your messages relevant to the corresponding text channel.
+        //     Hey Drawers and Circlers!
+
+        //     We hope you enjoy using the server, before you start participating in chat with others, please have a look at our rules and guidelines below!
+
+        //     Happy chatting!
+
+        //     - DC Executive Team
 
 
-            *Want to know more? Visit us at https://www.facebook.com/groups/utsdrawingcircle/*
+        //     Rules
+        //     ======================
+        //     [1]: Any form of harassment or offensive behaviour will not be tolerated.
+        //     [2]: No explicit artwork unless otherwise approved by @execs and @moderators.
+        //     [3]: No excessive spam of visuals and words.
 
-            \`\`\`
+        //     Community Guidelines
+        //     ======================
+        //     [1]: Be nice.
+        //     [2]: Respect each other's opinions, art and each other.
+        //     [3]: Be constructive in feedback (people have feelings too).
+        //     [4]: If possible, keep your messages relevant to the corresponding text channel.
 
-            :heavy_minus_sign: :heavy_minus_sign:`
+
+        //     *Want to know more? Visit us at https://www.facebook.com/groups/utsdrawingcircle/*
+
+        //     \`\`\`
+
+        //     :heavy_minus_sign: :heavy_minus_sign:`
             
-            welcomeChannel.sendMessage(welcomeMessage)
-        }
-        //postWelcome()
-        //Post Announcement
-        function postAnnouncement() {
-            const announcementChanneliD = "251704059587723264"
-            const announcementChannel = client.channels.get(announcementChanneliD)
-            const announcementMessage = `:rotating_light:**BZZZT**:rotating_light: \`\`\`404 ERROR! Life Drawing not found!\`\`\`
-            \`Sorry\` @everyone! \`Life Drawing has been postponed this week to the:\` **7th September, Thursday**.
-            \`DC's charming bot apologises for any inconvenience and hopes you have a great week!\`
+        //     welcomeChannel.sendMessage(welcomeMessage)
+        // }
+        // //postWelcome()
+        // //Post Announcement
+        // function postAnnouncement() {
+        //     const announcementChanneliD = "251704059587723264"
+        //     const announcementChannel = client.channels.get(announcementChanneliD)
+        //     const announcementMessage = `:rotating_light:**BZZZT**:rotating_light: \`\`\`404 ERROR! Life Drawing not found!\`\`\`
+        //     \`Sorry\` @everyone! \`Life Drawing has been postponed this week to the:\` **7th September, Thursday**.
+        //     \`DC's charming bot apologises for any inconvenience and hopes you have a great week!\`
 
-            :robot: \`(this is me btw)\``
-            announcementChannel.sendMessage(announcementMessage)
-        }
+        //     :robot: \`(this is me btw)\``
+        //     announcementChannel.sendMessage(announcementMessage)
+        // }
         // postAnnouncement()
         });
+
+        /******************
+         * Commands        
+         ******************/
+        client.on('message', message => {
+            var id = message.author.id
+            var content = message.content.toLowerCase()
+            if(id == '235688549343559680' || id == '157392505032146945'){
+                switch (content) {
+                    case 'hi':
+                        message.reply('Hello to you too!')
+                        message.react('👋')
+                        break
+                    case '!help space-oddity':
+                        message.author.send('Space Oddity, whachu wanna know?')
+                        break
+                    case 'gimme':
+                        // message.guild.roles
+                        message.reply('Check the server console')
+                        console.log("")
+                }
+                console.log(message.author.username)
+            }
+            
+        })
+
 
 
         //Listeners
