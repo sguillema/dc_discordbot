@@ -94,86 +94,112 @@ app.listen(3000, () => {
          * Commands        
          ******************/
         client.on('message', message => {
+            // 251342596494983168 spaceoddity
+            // 424773922672738310 spaceoddity channnel
+            // 251696919661903873 robot
+            // 427773522194989056 secret
+            // 420395515704770560 Akira's ID
+            // 427768066974416896 test channel ID
+            var spaceoddityMembers = "427407748410376192"
+            var spaceoddityChannel = "424773922672738310"
+            var secretMembers = "427773522194989056"
+
+            var idMarcella = '235688549343559680'
+            var idSebastian = '157392505032146945'
+            var idAnita = '271286662993149954'
+
             var id = message.author.id
             var content = message.content.toLowerCase()
-            if(id == '235688549343559680' || id == '157392505032146945'){
+
+            switch(content) {
+                case 'i love you dc bot':
+                    message.reply('I love you too')
+                    message.react('💖')
+                    break
+
+                case 'marcella is the best':
+                    message.reply('I know right??')
+                    break
+
+                case 'sebastian is the best':
+                    message.reply('I know right??')
+                    break
+            }
+
+            if(id == idMarcella || id == idSebastian){
                 switch (content) {
-                    case 'hi':
+
+                    case 'hi bot':
                         message.reply('Hello to you too!')
                         message.react('👋')
                         break
+                    
+                    // case 'i love you dc bot':
+                    //     message.reply('I love you too')
+                    //     message.react('💖')
+                    //     break
+
                     case '!help space-oddity':
                         message.author.send('Space Oddity, whachu wanna know?')
                         break
-                    case 'gimme':
-                        // message.guild.roles
-                        message.reply('Check the server console')
-                        console.log("")
+
+                    case '!gimme roles':
+                        console.log(message.guild.roles)
+                        message.reply("Check the server console")
+                        break
+
+                    case '!gimme space oddity members':
+                        var reply = []
+                        message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+                            reply.push(member.displayName)
+                        })
+                        message.reply(reply.toString())
+                        break
+
+                    case '!gimme secret members':
+                        var reply = []
+                        message.guild.roles.get(secretMembers).members.forEach((member)=>{
+                            reply.push(member.displayName)
+                        })
+                        message.reply(reply.toString())
+                        break
+
+                    case '!send secret members a message':
+                        message.guild.roles.get('427773522194989056').members.forEach((member)=>{
+                            member.send('Hi!! Please ignore this message, this is just a test.')
+                        })
+                        message.react('👌')
+                        break
+
+                    case 'thanks':
+                        message.reply('No worries')
+                        break
+
+                    case '!bot post channel intro':
+                        client.channels.get(spaceoddityChannel).send(
+                            `@Space Oddity\n\`The year is 2128, a year of great technological excitement and upheaval in the middle of the Greatest Space Age known to man. Continued environmental decline has forced humanity to embark on brave crusades off-world in search for greener pastures… including yourself. \n\nHumankind’s reach now expands across Solar Systems and has made contact with other civilisations, forming the Intergalactic Alliance. Armed with pencils, artefacts thought to channel a mystical force, we mark our new place in the galaxy. \n\nWhat awaits you in this world?\``
+                        )
+                        message.react('👌')
+                        message.reply('Message posted to channel!')
+                        break
+
+                    case '!bot send intro message to members':
+                        var payload = `*DC Space Oddity* \n\`\`\`md\nYou have a new message in your inbox!\n--------\n \n[Subject:][Welcome aboard!] \n[From:][The Captain] \n\nA good morning and welcome to all passengers aboard this flight. We have just confirmed a successful lift-off and hope you all enjoy the journey ahead. Should you have any inquiries along the way, please feel free to contact any of the staff onboard and we will help the best we can. \n\nI would also like to use this opportunity to inform you of a few things to be aware of on this journey. Firstly, you will find a supply of all emergency equipment in your rooms, including spare oxygen tanks, rations, and firearms. Please note that while they are there for your safety, they should only be used in an emergency. \n\nSecondly, this ship is carrying several containers of atmospheric gas sampled from the previous planet that may be harmful to the human species. While it is safely contained for the moment, it is well-advised to stay away from the Lower Deck of the ship. \n\nAnd thirdly, we are expecting a delegation of Intergalactic Alliance officials to arrive shortly before we land. Please do not be alarmed as we are just going through protocol procedures before landing in foreign territory.\n\nThank you again for joining us on this journey, and we wish you a safe flight.\n\nThe Captain\`\`\``
+                        message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+                            member.send(payload)
+                        })
+                        message.guild.roles.get(secretMembers).members.forEach((member)=>{
+                            member.send(payload)
+                        })
+                        message.react('👌')
+                        message.reply('Message sent to members!')
+                        break
+                        
                 }
                 console.log(message.author.username)
             }
             
         })
-
-
-
-        //Listeners
-        // client.on('messageDelete', message => {
-        //     doomcounter++
-        //     console.log(doomcounter);
-        // })
-
-        //Bot commands
-        // client.on('message', message => {
-            
-        //     // // The YOLO command
-        //     // if (message.content.includes('!nuke')) {
-        //     //     let channelId = message.channel.id;
-        //     //     //console.log(channelId)
-        //     //     message.channel.sendMessage("KABOOOOOOOOOOOM");
-        //     //     let target = client.channels.get(channelId);
-        //     //     target.fetchMessages({limit: 100})
-        //     //         .then(message=>message.deleteAll())
-        //     // }
-
-        //     //The quotes
-        //     if (message.content.includes('!quote')) {  
-        //         let quote = quotes[Math.floor(Math.random()*quotes.length)];
-        //         message.channel.sendMessage("```\"..."+quote+"\""+" - Yining Xia (c. 4000BC)```");
-        //     }
-
-        //     if (message.content.includes('!newestQuote')) {
-        //         let quote = quotes[(quotes.length - 1)];
-        //         message.channel.sendMessage("```\"..."+quote+"\""+" - Yining Xia (c. 4000BC)```");
-        //     }
-
-        //     //Help
-        //     if (message.content === '!help') {
-        //         message.author.sendMessage("Hi! For details regarding current and/or upcoming events, feel free to ask an Executive in the discord server or check out our Facebook page @ https://www.facebook.com/groups/utsdrawingcircle !")
-        //     }
-
-        //     //Lenny Face
-        //     // if (message.content.includes("!lenny")) {
-        //     //     message.reply("( ͡° ͜ʖ ͡°)");
-        //     // }
-
-        //     //Show Avatar
-        //     // if (message.content.includes("!avatar")) {
-        //     //     message.reply("Here's your avatar " + message.author.avatarURL);
-        //     // }
-
-        //     //Bonus: Purpose
-        //     // if (message.content.toLowerCase() == 'what is your purpose dc bot?'){
-        //     //     message.reply("To remind Sebastian that he **actually** spent time making a bot to return Yining quotes.");
-        //     // }
-        //     if (message.content.toLowerCase() == 'what is your purpose dc bot?'){
-        //         let purpose = purposes[Math.floor(Math.random()*purposes.length)];
-        //         message.reply(purpose);
-        //     }
-
-        //     //Rules
-
-        // });
 
         client.login(config.token);
 })
