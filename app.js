@@ -156,12 +156,44 @@ app.listen(3000, () => {
                         message.reply(reply.toString())
                         break
 
+                    case '!bot get spaceoddityids':
+                        console.log("Deploying '!bot get spaceoddityIds'")
+                        var reply = []
+                        message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+                            reply.push({
+                                name: member.displayName,
+                                id: member.id
+                            })
+                        })
+                        var replyString = ``
+                        reply.forEach((member)=> {
+                            replyString += member.name + ` | id: ` + member.id + `\n`
+                        })
+                        message.reply(replyString)
+                        break
+
                     case '!gimme secret members':
                         var reply = []
                         message.guild.roles.get(secretMembers).members.forEach((member)=>{
                             reply.push(member.displayName)
                         })
                         message.reply(reply.toString())
+                        break
+                        
+                    case '!bot get secretids':
+                        console.log("Deploying '!bot get secretids'")
+                        var reply = []
+                        message.guild.roles.get(secretMembers).members.forEach((member)=>{
+                            reply.push({
+                                name: member.displayName,
+                                id: member.id
+                            })
+                        })
+                        var replyString = ``
+                        reply.forEach((member)=> {
+                            replyString += member.name + ` | id: ` + member.id + `\n`
+                        })
+                        message.reply(replyString)
                         break
 
                     case '!send secret members a message':
@@ -195,6 +227,48 @@ app.listen(3000, () => {
                         message.reply('Message sent to members!')
                         break
                         
+                    case '!bot so-test':
+                        console.log("Deploying '!SpaceOddity rnd0'")
+
+                        var payload = `\`\`\`md\n**A SPACE ODDITY BEGINS...**\n\n# EVENT: 01 \n# HP: 25/25\n# STATUS: ALIVE\n\n--------\n\nUPDATE: \nIt is Day 23. Life aboard an Intergalactic ship is strange, but not terribly unfamiliar. The same meals are always served at the same times. You see the same people at the same places. You’ve made a few friends here and there, and even had a chat with the Captain every now and then. Life’s been nice... but you can’t wait to get off this ship. Somehow, something doesn’t feel quite right...\n\nYou are in the middle of eating lunch in the ship’s cafeteria when the floor begins to shake. No, not just the floor — the whole ship is trembling with alarming force. As one, you all look out the nearest bay window to see a massive asteroid hurtling straight for the wing of the ship! You barely have the time to throw yourselves to the floor before the rock collides...\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                        message.guild.roles.get(secretMembers).members.forEach((member)=>{
+                            member.send(payload)
+                        })
+                        message.react('👌')
+                        message.reply('Message sent to secret members!')
+                        break
+
+                    // case '!bot so-r1':
+                    //     console.log("Deploying '!bot so-r1'")
+
+                    //     var payload = `\`\`\`md\n**A SPACE ODDITY BEGINS...**\n\n# EVENT: 01 \n# HP: 25/25\n# STATUS: ALIVE\n\n--------\n\nUPDATE: \nIt is Day 23. Life aboard an Intergalactic ship is strange, but not terribly unfamiliar. The same meals are always served at the same times. You see the same people at the same places. You’ve made a few friends here and there, and even had a chat with the Captain every now and then. Life’s been nice... but you can’t wait to get off this ship. Somehow, something doesn’t feel quite right...\n\nYou are in the middle of eating lunch in the ship’s cafeteria when the floor begins to shake. No, not just the floor — the whole ship is trembling with alarming force. As one, you all look out the nearest bay window to see a massive asteroid hurtling straight for the wing of the ship! You barely have the time to throw yourselves to the floor before the rock collides...\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+                    //         member.send(payload)
+                    //     })
+                    //     message.guild.roles.get(secretMembers).members.forEach((member)=>{
+                    //         member.send(payload)
+                    //     })
+                    //     message.react('👌')
+                    //     message.reply('Message sent to secret & spaceoddity members!')
+                    //     break
+                        
+                    case '!bot so-r1':
+                        console.log("Deploying '!bot so-r1'")
+
+                        var payload = `\`\`\`md\n**A SPACE ODDITY BEGINS...**\n\n# EVENT: 01 \n# HP: 25/25\n# STATUS: ALIVE\n\n--------\n\nUPDATE: \nIt is Day 23. Life aboard an Intergalactic ship is strange, but not terribly unfamiliar. The same meals are always served at the same times. You see the same people at the same places. You’ve made a few friends here and there, and even had a chat with the Captain every now and then. Life’s been nice... but you can’t wait to get off this ship. Somehow, something doesn’t feel quite right...\n\nYou are in the middle of eating lunch in the ship’s cafeteria when the floor begins to shake. No, not just the floor — the whole ship is trembling with alarming force. As one, you all look out the nearest bay window to see a massive asteroid hurtling straight for the wing of the ship! You barely have the time to throw yourselves to the floor before the rock collides...\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                        message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+                            member.send(payload)
+                        })
+                        message.guild.roles.get(secretMembers).members.forEach((member)=>{
+                            member.send(payload)
+                        })
+                        message.react('👌')
+                        message.reply('Message sent to secret & spaceoddity members!')
+                        break
+
                 }
                 console.log(message.author.username)
             }
