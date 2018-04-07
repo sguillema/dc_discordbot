@@ -201,8 +201,10 @@ app.listen(3000, () => {
                                 
                                 // Send payload
                                 member.send(payload)
+                                message.reply("Round 2 Update sent successfully to "+member.displayName)
                             } else {
                                 console.log("FAILED -- "+member.displayName)
+                                message.reply("Round 2 Update failed for "+member.displayName)
                             }
                         })
 
