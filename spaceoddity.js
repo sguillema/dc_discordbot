@@ -208,10 +208,65 @@ app.listen(3000, () => {
                     //         }
                     //     })
 
-                    //     message.reply("Test complete!")
+                    //     message.reply("Deploy complete!")
 
                     //     break
                     
+                    case '!bot test so-r3':
+                        console.log("TEST Deploying '!bot so-r3'")
+
+                        message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                            var payload = ``
+                            var memberId = member.id
+                            // CHANGE THE ROUND EVERY ROUND PLEASE.
+                            const round = 3
+                            var replyString
+                            var currentState
+                            var outcomes = {
+                                outcomes: [
+                                    {"range": [1, 12], "result": 0, "status": "POISONED", "message": `You all run as fast as you can for the cafeteria exit. Unfortunately, there are a lot of you, and patience is not your highest priority when your life is on the line. You are caught in the stampede of bodies and the haze of pungent green gas, making your stomach roll sickeningly [Poisoned][-1hp]. Either way, you at least all manage to escape the cafeteria, and seal it tightly shut behind you. \n\nAs you are catching your breath in the corridor, the captain’s voice comes on the speakers, ordering you all to return to your rooms until further notice. It makes sense, as your rooms are airtight and are stocked with emergency supplies. As the raggled crowd begins to disperse, the lights flicker, then turn off completely, plunging the ship into darkness. You hear an eerie static sound crackle from the speakers, then silence. Then you hear a scream …`},
+                                    {"range": [13, 20], "result": 0, "status": "BREATHING HEAVILY", "message": `You all run as fast as you can for the cafeteria exit. Unfortunately, there is a lot of you, and patience is not your highest priority when your life is on the line. You are quick enough on your feet to be one of the first to reach the door, and escape the worst of the pungent green gas. The rest are not so lucky. Either way, you all manage to escape the cafeteria, and seal it tightly shut behind you. \n\nAs you are catching your breath in the corridor, the captain’s voice comes on the speakers, ordering you all to return to your rooms until further notice. It makes sense, as your rooms are airtight and are stocked with emergency supplies. As the raggled crowd begins to disperse, the lights flicker, then turn off completely, plunging the ship into darkness. You hear an eerie static sound crackle from the speakers, then silence. Then you hear a scream …`},
+                                ]
+                            }
+                            // console.log(participants[memberId])
+                            if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                                console.log("Exists -- "+member.displayName)
+                                currentState = results.players[participants[memberId]].history[round - 1]
+                                // console.log(currentState)
+                                // console.log(currentState.health+`\n`)
+                                var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                                var health = currentState.health
+                                var status = ''
+                                
+                                
+                                outcomes.outcomes.forEach((outcome)=>{
+                                    if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                                        status = outcome.status
+                                        
+                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                                        payload += outcome.message
+                                    }
+                                })
+
+
+                                payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                                
+                                // Send payload
+                                // member.send(payload)
+                                message.reply("Round 3 Update: "+member.displayName+`\n\n`+payload)
+                            } else {
+                                console.log("FAILED -- "+member.displayName)
+                                message.reply("Round 3 Update failed for "+member.displayName)
+                            }
+                        })
+
+                        message.reply("Test complete!")
+
+                        break
+
                     case '!bot so-r3':
                         console.log("LIVE Deploying '!bot so-r3'")
 
@@ -219,13 +274,14 @@ app.listen(3000, () => {
 
                             var payload = ``
                             var memberId = member.id
-                            const round = 2
+                            // CHANGE THE ROUND EVERY ROUND PLEASE.
+                            const round = 3
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 12], "result": -1, "status": "POISONED", "message": `You all run as fast as you can for the cafeteria exit. Unfortunately, there are a lot of you, and patience is not your highest priority when your life is on the line. You are caught in the stampede of bodies and the haze of pungent green gas, making your stomach roll sickeningly. Either way, you at least all manage to escape the cafeteria, and seal it tightly shut behind you. \n\nAs you are catching your breath in the corridor, the captain’s voice comes on the speakers, ordering you all to return to your rooms until further notice. It makes sense, as your rooms are airtight and are stocked with emergency supplies. As the raggled crowd begins to disperse, the lights flicker, then turn off completely, plunging the ship into darkness. You hear an eerie static sound crackle from the speakers, then silence. Then you hear a scream … `},
-                                    {"range": [13, 20], "result": -3, "status": "BREATHING HEAVILY", "message": `You all run as fast as you can for the cafeteria exit. Unfortunately, there is a lot of you, and patience is not your highest priority when your life is on the line. You are quick enough on your feet to be one of the first to reach the door, and escape the worst of the pungent green gas. The rest are not so lucky. Either way, you all manage to escape the cafeteria and seal it tightly shut behind you. \n\nAs you are catching your breath in the corridor, the captain’s voice comes on the speakers, ordering you all to return to your rooms until further notice. It makes sense, as your rooms are airtight and are stocked with emergency supplies. As the raggled crowd begins to disperse, the lights flicker, then turn off completely, plunging the ship into darkness. You hear an eerie static sound crackle from the speakers, then silence. Then you hear a scream … `},
+                                    {"range": [1, 12], "result": 0, "status": "POISONED", "message": `You all run as fast as you can for the cafeteria exit. Unfortunately, there are a lot of you, and patience is not your highest priority when your life is on the line. You are caught in the stampede of bodies and the haze of pungent green gas, making your stomach roll sickeningly [Poisoned][-1hp]. Either way, you at least all manage to escape the cafeteria, and seal it tightly shut behind you. \n\nAs you are catching your breath in the corridor, the captain’s voice comes on the speakers, ordering you all to return to your rooms until further notice. It makes sense, as your rooms are airtight and are stocked with emergency supplies. As the raggled crowd begins to disperse, the lights flicker, then turn off completely, plunging the ship into darkness. You hear an eerie static sound crackle from the speakers, then silence. Then you hear a scream …`},
+                                    {"range": [13, 20], "result": 0, "status": "BREATHING HEAVILY", "message": `You all run as fast as you can for the cafeteria exit. Unfortunately, there is a lot of you, and patience is not your highest priority when your life is on the line. You are quick enough on your feet to be one of the first to reach the door, and escape the worst of the pungent green gas. The rest are not so lucky. Either way, you all manage to escape the cafeteria, and seal it tightly shut behind you. \n\nAs you are catching your breath in the corridor, the captain’s voice comes on the speakers, ordering you all to return to your rooms until further notice. It makes sense, as your rooms are airtight and are stocked with emergency supplies. As the raggled crowd begins to disperse, the lights flicker, then turn off completely, plunging the ship into darkness. You hear an eerie static sound crackle from the speakers, then silence. Then you hear a scream …`},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -262,7 +318,7 @@ app.listen(3000, () => {
                             }
                         })
 
-                        message.reply("Test complete!")
+                        message.reply("Deploy complete!")
 
                         break
 
