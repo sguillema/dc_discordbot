@@ -336,7 +336,7 @@ app.listen(3000, () => {
                             var outcomes = {
                                 outcomes: [
                                     {"range": [1, 3], "result": -1, "status": "BREATHING HARD", "message": `You don’t bother to wait to find out what happened! You bolt for the nearest room you remember seeing before the lights went out. Your quick thinking and agility help you keep ahead of the stampeding crowd and to the doorway in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
-                                    {"range": [4, 6], "result": 0, "status": "TRAMPLED", "message": `Everyone begins moving at once! Not wanting to find out the source of that scream, you bolt for the nearest room you remember seeing before the lights went out. Unfortunately, everyone else seems to be thinking the same. You are caught in the stampede of bodies, and shoved roughly into the wall as they surge past [Trampled][-2hp] Still, you manage to stumble to the doorway just in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
+                                    {"range": [4, 6], "result": 0, "status": "TRAMPLED", "message": `Everyone begins moving at once! Not wanting to find out the source of that scream, you bolt for the nearest room you remember seeing before the lights went out. Unfortunately, everyone else seems to be thinking the same. You are caught in the stampede of bodies, and shoved roughly into the wall as they surge past [Trampled][-1hp] Still, you manage to stumble to the doorway just in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -358,6 +358,10 @@ app.listen(3000, () => {
                                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
                                         payload += outcome.message
+
+                                        if(currentState.poisoned == true){
+                                            payload += `\n\n*You feel a bit sick* [Poisoned][-1hp]`
+                                        }
 
                                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                     }
@@ -398,7 +402,7 @@ app.listen(3000, () => {
                             var outcomes = {
                                 outcomes: [
                                     {"range": [1, 3], "result": -1, "status": "BREATHING HARD", "message": `You don’t bother to wait to find out what happened! You bolt for the nearest room you remember seeing before the lights went out. Your quick thinking and agility help you keep ahead of the stampeding crowd and to the doorway in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
-                                    {"range": [4, 6], "result": 0, "status": "TRAMPLED", "message": `Everyone begins moving at once! Not wanting to find out the source of that scream, you bolt for the nearest room you remember seeing before the lights went out. Unfortunately, everyone else seems to be thinking the same. You are caught in the stampede of bodies, and shoved roughly into the wall as they surge past [Trampled][-2hp] Still, you manage to stumble to the doorway just in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
+                                    {"range": [4, 6], "result": 0, "status": "TRAMPLED", "message": `Everyone begins moving at once! Not wanting to find out the source of that scream, you bolt for the nearest room you remember seeing before the lights went out. Unfortunately, everyone else seems to be thinking the same. You are caught in the stampede of bodies, and shoved roughly into the wall as they surge past [Trampled][-1hp] Still, you manage to stumble to the doorway just in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -420,6 +424,10 @@ app.listen(3000, () => {
                                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
                                         payload += outcome.message
+
+                                        if(currentState.poisoned == true){
+                                            payload += `\n\n*You feel a bit sick* [Poisoned][1-hp]`
+                                        }
 
                                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                     }
