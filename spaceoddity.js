@@ -322,62 +322,195 @@ app.listen(3000, () => {
 
                     //     break
                     
-                    case '!bot test so-r4':
-                        console.log("TEST Deploying '!bot so-r4'")
+                    // case '!bot test so-r4':
+                    //     console.log("TEST Deploying '!bot so-r4'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 4
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 3], "result": -1, "status": "BREATHING HARD", "message": `You don’t bother to wait to find out what happened! You bolt for the nearest room you remember seeing before the lights went out. Your quick thinking and agility help you keep ahead of the stampeding crowd and to the doorway in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
+                    //                 {"range": [4, 6], "result": 0, "status": "TRAMPLED", "message": `Everyone begins moving at once! Not wanting to find out the source of that scream, you bolt for the nearest room you remember seeing before the lights went out. Unfortunately, everyone else seems to be thinking the same. You are caught in the stampede of bodies, and shoved roughly into the wall as they surge past [Trampled][-1hp] Still, you manage to stumble to the doorway just in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             currentState = results.players[participants[memberId]].history[round - 1]
+                    //             // console.log(currentState)
+                    //             // console.log(currentState.health+`\n`)
+                    //             var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //             var health = currentState.health
+                    //             var status = ''
+                                
+                                
+                    //             outcomes.outcomes.forEach((outcome)=>{
+                    //                 if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                     status = outcome.status
+                                        
+                    //                     payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                     payload += outcome.message
+
+                    //                     if(currentState.poisoned == true){
+                    //                         payload += `\n\n*You feel a bit sick* [Poisoned][-1hp]`
+                    //                     }
+
+                    //                     payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                 }
+                    //                 else if(currentState.rollResult == "lowest"){
+                    //                     status = "DEAD"
+
+                    //                     payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                     payload += `The echoes of the corridor reveal your own scream. The corridor’s emergency beacon reveals a disfigured man, lumped over… approaching you. Bones extrude from the man’s arms, blackened and claw-like. The beacon flashes – every flash shows the figure closer and close than before. You hear several doors in the corridor close in succession… Just as you think you have enough time to turn and run, your legs are swept and you fall forward. As you try to bring yourself up, razor sharp claws embed themselves into your back and push you straight back down. The pressure intensifies and you feel your breath leaving you. The claws violently tear from your back. Your vision turns red. As you lie mangled on the floor, your last sight is that of a figure walking over you, further down into the blackness of the corridor… You try to scream for help, but nothing comes out… [Instant death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
+                    //                 }
+
+                    //             })
+                                
+                    //             // Send payload
+                    //             // member.send(payload)
+                    //             message.reply("Round "+round+" Update: "+member.displayName+`\n\n`+payload)
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.reply("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("Test complete!")
+
+                    //     break
+
+                    // case '!bot so-r4':
+                    //     console.log("LIVE Deploying '!bot so-r4'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 4
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 3], "result": -1, "status": "BREATHING HARD", "message": `You don’t bother to wait to find out what happened! You bolt for the nearest room you remember seeing before the lights went out. Your quick thinking and agility help you keep ahead of the stampeding crowd and to the doorway in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
+                    //                 {"range": [4, 6], "result": 0, "status": "TRAMPLED", "message": `Everyone begins moving at once! Not wanting to find out the source of that scream, you bolt for the nearest room you remember seeing before the lights went out. Unfortunately, everyone else seems to be thinking the same. You are caught in the stampede of bodies, and shoved roughly into the wall as they surge past [Trampled][-1hp] Still, you manage to stumble to the doorway just in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             currentState = results.players[participants[memberId]].history[round - 1]
+                    //             // console.log(currentState)
+                    //             // console.log(currentState.health+`\n`)
+                    //             var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //             var health = currentState.health
+                    //             var status = ''
+                                
+                                
+                    //             outcomes.outcomes.forEach((outcome)=>{
+                    //                 if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                     status = outcome.status
+                                        
+                    //                     payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                     payload += outcome.message
+
+                    //                     if(currentState.poisoned == true){
+                    //                         payload += `\n\n*You feel a bit sick* [Poisoned][1-hp]`
+                    //                     }
+
+                    //                     payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                 }
+                    //                 else if(currentState.rollResult == "lowest"){
+                    //                     status = "DEAD"
+
+                    //                     payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                     payload += `The echoes of the corridor reveal your own scream. The corridor’s emergency beacon reveals a disfigured man, lumped over… approaching you. Bones extrude from the man’s arms, blackened and claw-like. The beacon flashes – every flash shows the figure closer and close than before. You hear several doors in the corridor close in succession… Just as you think you have enough time to turn and run, your legs are swept and you fall forward. As you try to bring yourself up, razor sharp claws embed themselves into your back and push you straight back down. The pressure intensifies and you feel your breath leaving you. The claws violently tear from your back. Your vision turns red. As you lie mangled on the floor, your last sight is that of a figure walking over you, further down into the blackness of the corridor… You try to scream for help, but nothing comes out… [Instant death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
+                    //                 }
+
+                    //             })
+                                
+                    //             // Send payload
+                    //             member.send(payload)
+                    //             message.reply("Round "+round+" Update sent successfully to "+member.displayName)
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.reply("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("Deploy complete!")
+
+                    //     break
+
+                    case '!bot test so-r5':
+                        console.log("TEST Deploying '!bot so-r5'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 4
+                            const round = 5
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 3], "result": -1, "status": "BREATHING HARD", "message": `You don’t bother to wait to find out what happened! You bolt for the nearest room you remember seeing before the lights went out. Your quick thinking and agility help you keep ahead of the stampeding crowd and to the doorway in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
-                                    {"range": [4, 6], "result": 0, "status": "TRAMPLED", "message": `Everyone begins moving at once! Not wanting to find out the source of that scream, you bolt for the nearest room you remember seeing before the lights went out. Unfortunately, everyone else seems to be thinking the same. You are caught in the stampede of bodies, and shoved roughly into the wall as they surge past [Trampled][-1hp] Still, you manage to stumble to the doorway just in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
+                                    {"range": [1, 3], "result": 0, "status": "SUSPICIOUS", "message": `You are suspicious of his offer… and decide to turn him down. Too much has happened in the past few minutes for you to trust his unerringly convenient appearance. He doesn’t seem to take offence either way, and simply gives you a nod of acknowledgment before returning to gazing out the window. Despite your apprehension, you appreciate the silent company.\n\nThe officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship…`},
+                                    {"range": [4, 14], "result": 1, "status": "FEELING BETTER", "message": `You are wary of his offer, but decide there is no harm in accepting. However, you insist on tending to your wounds yourself. He seems to take no offence, and hands over the first-aid kit in the room without protest [Healed][+1hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `},
+                                    {"range": [15, 18], "result": 2, "status": "FEELING BETTER", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+2hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship…`},
+                                    {"range": [19, 20], "result": 3, "status": "FEELING GOOD", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+2hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `}
                                 ]
                             }
                             // console.log(participants[memberId])
                             if (!!participants[memberId] || participants[memberId] == 0){
                                 
                                 console.log("Exists -- "+member.displayName)
-                                currentState = results.players[participants[memberId]].history[round - 1]
-                                // console.log(currentState)
-                                // console.log(currentState.health+`\n`)
-                                var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-                                var health = currentState.health
-                                var status = ''
-                                
-                                
-                                outcomes.outcomes.forEach((outcome)=>{
-                                    if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
-                                        status = outcome.status
-                                        
-                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
-
-                                        payload += outcome.message
-
-                                        if(currentState.poisoned == true){
-                                            payload += `\n\n*You feel a bit sick* [Poisoned][-1hp]`
+                                if(results.players[participants[memberId]].history.length >= round){
+                                    currentState = results.players[participants[memberId]].history[round - 1]
+                                    // console.log(currentState)
+                                    // console.log(currentState.health+`\n`)
+                                    var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                                    var health = currentState.health
+                                    var status = ''
+                                    
+                                    
+                                    outcomes.outcomes.forEach((outcome)=>{
+                                        if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                                            status = outcome.status
+                                            
+                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+    
+                                            payload += outcome.message
+    
+                                            if(currentState.poisoned == true){
+                                                payload += `\n\n*Poison courses through your body* [Poisoned][-1hp]`
+                                            }
+    
+                                            payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                         }
-
-                                        payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
-                                    }
-                                    else if(currentState.rollResult == "lowest"){
-                                        status = "DEAD"
-
-                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
-
-                                        payload += `The echoes of the corridor reveal your own scream. The corridor’s emergency beacon reveals a disfigured man, lumped over… approaching you. Bones extrude from the man’s arms, blackened and claw-like. The beacon flashes – every flash shows the figure closer and close than before. You hear several doors in the corridor close in succession… Just as you think you have enough time to turn and run, your legs are swept and you fall forward. As you try to bring yourself up, razor sharp claws embed themselves into your back and push you straight back down. The pressure intensifies and you feel your breath leaving you. The claws violently tear from your back. Your vision turns red. As you lie mangled on the floor, your last sight is that of a figure walking over you, further down into the blackness of the corridor… You try to scream for help, but nothing comes out… [Instant death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
-                                    }
-
-                                })
-                                
-                                // Send payload
-                                // member.send(payload)
-                                message.reply("Round "+round+" Update: "+member.displayName+`\n\n`+payload)
+                                        else if(currentState.rollResult == "lowest"){
+                                        }
+    
+                                    })
+                                    
+                                    // Send payload
+                                    // member.send(payload)
+                                    message.reply("Round "+round+" Update: "+member.displayName+`\n\n`+payload)
+                                } else {
+                                    message.reply("Round "+round+" Update: "+member.displayName+`\n\n`+`**THEY DIED x_x**`)
+                                }
                             } else {
                                 console.log("FAILED -- "+member.displayName)
                                 message.reply("Round "+round+" Update failed for "+member.displayName)
@@ -388,62 +521,65 @@ app.listen(3000, () => {
 
                         break
 
-                    case '!bot so-r4':
-                        console.log("LIVE Deploying '!bot so-r4'")
+                    case '!bot so-r5':
+                        console.log("LIVE Deploying '!bot so-r5'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 4
+                            const round = 5
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 3], "result": -1, "status": "BREATHING HARD", "message": `You don’t bother to wait to find out what happened! You bolt for the nearest room you remember seeing before the lights went out. Your quick thinking and agility help you keep ahead of the stampeding crowd and to the doorway in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
-                                    {"range": [4, 6], "result": 0, "status": "TRAMPLED", "message": `Everyone begins moving at once! Not wanting to find out the source of that scream, you bolt for the nearest room you remember seeing before the lights went out. Unfortunately, everyone else seems to be thinking the same. You are caught in the stampede of bodies, and shoved roughly into the wall as they surge past [Trampled][-1hp] Still, you manage to stumble to the doorway just in time. You fling yourself inside and seal the door behind—you only to find you are not the only person in this room…\n\nTo your surprise, there is an Intergalactic Alliance officer standing before you, holding a torch in one hand and a firearm in the other. A crew of them had boarded the ship only the day before, but you hadn’t seen any until now. He offers you help with your injuries... but should you accept it?`},
+                                    {"range": [1, 3], "result": 0, "status": "SUSPICIOUS", "message": `You are suspicious of his offer… and decide to turn him down. Too much has happened in the past few minutes for you to trust his unerringly convenient appearance. He doesn’t seem to take offence either way, and simply gives you a nod of acknowledgment before returning to gazing out the window. Despite your apprehension, you appreciate the silent company.\n\nThe officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship…`},
+                                    {"range": [4, 14], "result": 1, "status": "FEELING BETTER", "message": `You are wary of his offer, but decide there is no harm in accepting. However, you insist on tending to your wounds yourself. He seems to take no offence, and hands over the first-aid kit in the room without protest [Healed][+1hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `},
+                                    {"range": [15, 18], "result": 2, "status": "FEELING BETTER", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+2hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship…`},
+                                    {"range": [19, 20], "result": 3, "status": "FEELING GOOD", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+2hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `}
                                 ]
                             }
                             // console.log(participants[memberId])
                             if (!!participants[memberId] || participants[memberId] == 0){
                                 
                                 console.log("Exists -- "+member.displayName)
-                                currentState = results.players[participants[memberId]].history[round - 1]
-                                // console.log(currentState)
-                                // console.log(currentState.health+`\n`)
-                                var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-                                var health = currentState.health
-                                var status = ''
-                                
-                                
-                                outcomes.outcomes.forEach((outcome)=>{
-                                    if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
-                                        status = outcome.status
-                                        
-                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+                                // This checks if the player has existence in this round (i.e. not dead from a previous round)
+                                if(results.players[participants[memberId]].history.length >= round){
+                                    currentState = results.players[participants[memberId]].history[round - 1]
+                                    // console.log(currentState)
+                                    // console.log(currentState.health+`\n`)
+                                    var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                                    var health = currentState.health
+                                    var status = ''
+                                    
+                                    
+                                    outcomes.outcomes.forEach((outcome)=>{
+                                        if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                                            status = outcome.status
+                                            
+                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
-                                        payload += outcome.message
+                                            payload += outcome.message
 
-                                        if(currentState.poisoned == true){
-                                            payload += `\n\n*You feel a bit sick* [Poisoned][1-hp]`
+                                            if(currentState.poisoned == true){
+                                                payload += `\n\n*Poison courses through your body* [Poisoned][-1hp]`
+                                            }
+
+                                            payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                                        }
+                                        else if(currentState.rollResult == "lowest"){
                                         }
 
-                                        payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
-                                    }
-                                    else if(currentState.rollResult == "lowest"){
-                                        status = "DEAD"
-
-                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
-
-                                        payload += `The echoes of the corridor reveal your own scream. The corridor’s emergency beacon reveals a disfigured man, lumped over… approaching you. Bones extrude from the man’s arms, blackened and claw-like. The beacon flashes – every flash shows the figure closer and close than before. You hear several doors in the corridor close in succession… Just as you think you have enough time to turn and run, your legs are swept and you fall forward. As you try to bring yourself up, razor sharp claws embed themselves into your back and push you straight back down. The pressure intensifies and you feel your breath leaving you. The claws violently tear from your back. Your vision turns red. As you lie mangled on the floor, your last sight is that of a figure walking over you, further down into the blackness of the corridor… You try to scream for help, but nothing comes out… [Instant death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
-                                    }
-
-                                })
-                                
-                                // Send payload
-                                member.send(payload)
-                                message.reply("Round "+round+" Update sent successfully to "+member.displayName)
+                                    })
+                                    
+                                    // Send payload
+                                    member.send(payload)
+                                    message.reply("Round "+round+" Update sent successfully to "+member.displayName)
+                                } else {
+                                    // Alternative response if player has died previously.
+                                    message.reply("Round "+round+" Update was not send because "+member.displayName+" is **DEAD**")
+                                }
                             } else {
                                 console.log("FAILED -- "+member.displayName)
                                 message.reply("Round "+round+" Update failed for "+member.displayName)
