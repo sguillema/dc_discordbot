@@ -456,6 +456,7 @@ app.listen(3000, () => {
 
                     case '!bot test so-r5':
                         console.log("TEST Deploying '!bot so-r5'")
+                        message.reply("TEST Deploying '!bot so-r5'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
@@ -470,7 +471,7 @@ app.listen(3000, () => {
                                     {"range": [1, 3], "result": 0, "status": "SUSPICIOUS", "message": `You are suspicious of his offer… and decide to turn him down. Too much has happened in the past few minutes for you to trust his unerringly convenient appearance. He doesn’t seem to take offence either way, and simply gives you a nod of acknowledgment before returning to gazing out the window. Despite your apprehension, you appreciate the silent company.\n\nThe officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship…`},
                                     {"range": [4, 14], "result": 1, "status": "FEELING BETTER", "message": `You are wary of his offer, but decide there is no harm in accepting. However, you insist on tending to your wounds yourself. He seems to take no offence, and hands over the first-aid kit in the room without protest [Healed][+1hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `},
                                     {"range": [15, 18], "result": 2, "status": "FEELING BETTER", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+2hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship…`},
-                                    {"range": [19, 20], "result": 3, "status": "FEELING GOOD", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+2hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `}
+                                    {"range": [19, 20], "result": 3, "status": "FEELING GOOD", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+3hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `}
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -507,13 +508,13 @@ app.listen(3000, () => {
                                     
                                     // Send payload
                                     // member.send(payload)
-                                    message.reply("Round "+round+" Update: "+member.displayName+`\n\n`+payload)
+                                    message.channel.send("Round "+round+" Update: "+member.displayName+`\n`+payload)
                                 } else {
-                                    message.reply("Round "+round+" Update: "+member.displayName+`\n\n`+`**THEY DIED x_x**`)
+                                    message.channel.send("Round "+round+" Update: "+member.displayName+`\n`+`**THEY DIED x_x**`)
                                 }
                             } else {
                                 console.log("FAILED -- "+member.displayName)
-                                message.reply("Round "+round+" Update failed for "+member.displayName)
+                                message.channel.send("Round "+round+" Update failed for "+member.displayName)
                             }
                         })
 
@@ -523,6 +524,7 @@ app.listen(3000, () => {
 
                     case '!bot so-r5':
                         console.log("LIVE Deploying '!bot so-r5'")
+                        message.reply("LIVE Deploying '!bot so-r5'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
@@ -537,7 +539,7 @@ app.listen(3000, () => {
                                     {"range": [1, 3], "result": 0, "status": "SUSPICIOUS", "message": `You are suspicious of his offer… and decide to turn him down. Too much has happened in the past few minutes for you to trust his unerringly convenient appearance. He doesn’t seem to take offence either way, and simply gives you a nod of acknowledgment before returning to gazing out the window. Despite your apprehension, you appreciate the silent company.\n\nThe officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship…`},
                                     {"range": [4, 14], "result": 1, "status": "FEELING BETTER", "message": `You are wary of his offer, but decide there is no harm in accepting. However, you insist on tending to your wounds yourself. He seems to take no offence, and hands over the first-aid kit in the room without protest [Healed][+1hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `},
                                     {"range": [15, 18], "result": 2, "status": "FEELING BETTER", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+2hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship…`},
-                                    {"range": [19, 20], "result": 3, "status": "FEELING GOOD", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+2hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `}
+                                    {"range": [19, 20], "result": 3, "status": "FEELING GOOD", "message": `You are wary of his offer, but decide there is no harm in letting him help. He uses the first-aid kit in the room to help tend to your wounds, cleaning any scrapes and bruises [Healed][+3hp] After the trauma of the past few minutes, it is nice to have this small time to breathe. Despite your apprehension, you feel somewhat safer with a trained officer at your side.\n\nAfterwards, the officer seems content to simply waiting out the event until the Captain returns on speaker. You try to calm yourself by walking over to the small window in your room and peering out into space. There is an unfamiliar planet nearby that could be a possible emergency landing point. However, you also notice something else—a small and unfamiliar ship descending and attaching itself to yours. Another terrifying tremor runs through the ship… `}
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -575,18 +577,18 @@ app.listen(3000, () => {
                                     
                                     // Send payload
                                     member.send(payload)
-                                    message.reply("Round "+round+" Update sent successfully to "+member.displayName)
+                                    message.channel.send("Round "+round+" Update sent successfully to "+member.displayName)
                                 } else {
                                     // Alternative response if player has died previously.
-                                    message.reply("Round "+round+" Update was not send because "+member.displayName+" is **DEAD**")
+                                    message.channel.send("Round "+round+" Update was not sent because "+member.displayName+" is **DEAD**")
                                 }
                             } else {
                                 console.log("FAILED -- "+member.displayName)
-                                message.reply("Round "+round+" Update failed for "+member.displayName)
+                                message.channel.send("Round "+round+" Update failed for "+member.displayName)
                             }
                         })
 
-                        message.reply("Deploy complete!")
+                        message.reply("LIVE Deploy complete!")
 
                         break
 
