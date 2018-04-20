@@ -590,23 +590,158 @@ app.listen(3000, () => {
 
                     //     break
 
-                    case '!bot test so-r6':
-                        console.log("TEST Deploying '!bot so-r6'")
-                        message.reply("TEST Deploying '!bot so-r6'")
+                    // case '!bot test so-r6':
+                    //     console.log("TEST Deploying '!bot so-r6'")
+                    //     message.reply("TEST Deploying '!bot so-r6'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 6
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 2], "result": 0, "status": "SCARED", "message": `The ship trembles violently, causing both you and the officer to stumble. You grab the window frame tightly to keep balance. The officer, on the other hand, fumbles and drops his gun. It misfires with a bang—but only the officer himself is grazed. He curses under his breath, but grits his teeth to point out the window. “Pirates,” he hisses, and a chill runs down your spine. \n\nThe idea that you are on a damaged ship, filled with poison gas and now being boarded by space pirates, make you both reluctant to stay in your room to be slaughtered. You agree that the best course of action would be to get out of the ship altogether. With no time to tend to wounds, you change into the protective space suits that were stored in your room, and attach the spare oxygen to yourselves. Then, with his torch out like a shield, he slowly opens the door of your cabin, and you brave the dark corridor outside… `},
+                    //                 {"range": [3, 5], "result": -1, "status": "GRAZED", "message": `The ship trembles violently, causing both you and the officer to stumble. You grab the window frame tightly to keep balance. The officer, on the other hand, fumbles and drops his gun. It misfires with a bang—the bullet almost misses you, but leaves a painful graze behind [Grazed][-1hp]. He apologises, but then points urgently out the window—it seems you have a worse problem on the horizon. “Pirates,” he hisses, and a chill runs down your spine. \n\nThe idea that you are on a damaged ship, filled with poison gas and now being boarded by space pirates, make you both reluctant to stay in your room to be slaughtered. You agree that the best course of action would be to get out of the ship altogether. With no time to tend to wounds, you change into the protective space suits that were stored in your room, and attach the spare oxygen to yourselves. Then, with his torch out like a shield, he slowly opens the door of your cabin, and you brave the dark corridor outside… `},
+                    //                 {"range": [6, 6], "result": -3, "status": "SHOT", "message": `The ship trembles violently, causing both you and the officer to stumble. You grab the window frame tightly to keep balance. The officer, on the other hand, fumbles and drops his gun. It misfires with a bang—the bullet takes out a chunk of your arm [Shot][-3hp]. You cry out and he apologises, but then points urgently out the window—it seems you have a worse problem on the horizon. “Pirates,” he hisses, and a chill runs down your spine. \n\nThe idea that you are on a damaged ship, filled with poison gas and now being boarded by space pirates, make you both reluctant to stay in your room to be slaughtered. You agree that the best course of action would be to get out of the ship altogether. With no time to tend to wounds, you change into the protective space suits that were stored in your room, and attach the spare oxygen to yourselves. Then, with his torch out like a shield, he slowly opens the door of your cabin, and you brave the dark corridor outside… `},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
+                                    
+                                    
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
+                                            
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+    
+                    //                         payload += outcome.message
+    
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*Your head throbs...* [Poisoned][-1hp]`
+                    //                         }
+    
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                     }
+    
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 // member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                    //             } else {
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("Test complete!")
+
+                    //     break
+
+                    // case '!bot so-r6':
+                    //     console.log("LIVE Deploying '!bot so-r6'")
+                    //     message.reply("LIVE Deploying '!bot so-r6'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 6
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 2], "result": 0, "status": "SCARED", "message": `The ship trembles violently, causing both you and the officer to stumble. You grab the window frame tightly to keep balance. The officer, on the other hand, fumbles and drops his gun. It misfires with a bang—but only the officer himself is grazed. He curses under his breath, but grits his teeth to point out the window. “Pirates,” he hisses, and a chill runs down your spine. \n\nThe idea that you are on a damaged ship, filled with poison gas and now being boarded by space pirates, make you both reluctant to stay in your room to be slaughtered. You agree that the best course of action would be to get out of the ship altogether. With no time to tend to wounds, you change into the protective space suits that were stored in your room, and attach the spare oxygen to yourselves. Then, with his torch out like a shield, he slowly opens the door of your cabin, and you brave the dark corridor outside… `},
+                    //                 {"range": [3, 5], "result": -1, "status": "GRAZED", "message": `The ship trembles violently, causing both you and the officer to stumble. You grab the window frame tightly to keep balance. The officer, on the other hand, fumbles and drops his gun. It misfires with a bang—the bullet almost misses you, but leaves a painful graze behind [Grazed][-1hp]. He apologises, but then points urgently out the window—it seems you have a worse problem on the horizon. “Pirates,” he hisses, and a chill runs down your spine. \n\nThe idea that you are on a damaged ship, filled with poison gas and now being boarded by space pirates, make you both reluctant to stay in your room to be slaughtered. You agree that the best course of action would be to get out of the ship altogether. With no time to tend to wounds, you change into the protective space suits that were stored in your room, and attach the spare oxygen to yourselves. Then, with his torch out like a shield, he slowly opens the door of your cabin, and you brave the dark corridor outside… `},
+                    //                 {"range": [6, 6], "result": -3, "status": "SHOT", "message": `The ship trembles violently, causing both you and the officer to stumble. You grab the window frame tightly to keep balance. The officer, on the other hand, fumbles and drops his gun. It misfires with a bang—the bullet takes out a chunk of your arm [Shot][-3hp]. You cry out and he apologises, but then points urgently out the window—it seems you have a worse problem on the horizon. “Pirates,” he hisses, and a chill runs down your spine. \n\nThe idea that you are on a damaged ship, filled with poison gas and now being boarded by space pirates, make you both reluctant to stay in your room to be slaughtered. You agree that the best course of action would be to get out of the ship altogether. With no time to tend to wounds, you change into the protective space suits that were stored in your room, and attach the spare oxygen to yourselves. Then, with his torch out like a shield, he slowly opens the door of your cabin, and you brave the dark corridor outside… `},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             // This checks if the player has existence in this round (i.e. not dead from a previous round)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
+                                    
+                                    
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
+                                            
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         payload += outcome.message
+
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*Your head pulses...* [Poisoned][-1hp]`
+                    //                         }
+
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                     }
+
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                    //             } else {
+                    //                 // Alternative response if player has died previously.
+                    //                 message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("LIVE Deploy complete!")
+
+                    //     break
+
+                    case '!bot test so-r7':
+                        console.log("TEST Deploying '!bot so-r7'")
+                        message.reply("TEST Deploying '!bot so-r7'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 6
+                            const round = 7
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 2], "result": 0, "status": "SCARED", "message": `The ship trembles violently, causing both you and the officer to stumble. You grab the window frame tightly to keep balance. The officer, on the other hand, fumbles and drops his gun. It misfires with a bang—but only the officer himself is grazed. He curses under his breath, but grits his teeth to point out the window. “Pirates,” he hisses, and a chill runs down your spine. \n\nThe idea that you are on a damaged ship, filled with poison gas and now being boarded by space pirates, make you both reluctant to stay in your room to be slaughtered. You agree that the best course of action would be to get out of the ship altogether. With no time to tend to wounds, you change into the protective space suits that were stored in your room, and attach the spare oxygen to yourselves. Then, with his torch out like a shield, he slowly opens the door of your cabin, and you brave the dark corridor outside… `},
-                                    {"range": [3, 5], "result": -1, "status": "GRAZED", "message": `The ship trembles violently, causing both you and the officer to stumble. You grab the window frame tightly to keep balance. The officer, on the other hand, fumbles and drops his gun. It misfires with a bang—the bullet almost misses you, but leaves a painful graze behind [Grazed][-1hp]. He apologises, but then points urgently out the window—it seems you have a worse problem on the horizon. “Pirates,” he hisses, and a chill runs down your spine. \n\nThe idea that you are on a damaged ship, filled with poison gas and now being boarded by space pirates, make you both reluctant to stay in your room to be slaughtered. You agree that the best course of action would be to get out of the ship altogether. With no time to tend to wounds, you change into the protective space suits that were stored in your room, and attach the spare oxygen to yourselves. Then, with his torch out like a shield, he slowly opens the door of your cabin, and you brave the dark corridor outside… `},
-                                    {"range": [6, 6], "result": -3, "status": "SHOT", "message": `The ship trembles violently, causing both you and the officer to stumble. You grab the window frame tightly to keep balance. The officer, on the other hand, fumbles and drops his gun. It misfires with a bang—the bullet takes out a chunk of your arm [Shot][-3hp]. You cry out and he apologises, but then points urgently out the window—it seems you have a worse problem on the horizon. “Pirates,” he hisses, and a chill runs down your spine. \n\nThe idea that you are on a damaged ship, filled with poison gas and now being boarded by space pirates, make you both reluctant to stay in your room to be slaughtered. You agree that the best course of action would be to get out of the ship altogether. With no time to tend to wounds, you change into the protective space suits that were stored in your room, and attach the spare oxygen to yourselves. Then, with his torch out like a shield, he slowly opens the door of your cabin, and you brave the dark corridor outside… `},
+                                    {"range": [5, 10], "result": -5, "status": "BLEEDING", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You are slammed into the opposite wall, your head hitting metal and for a split second, your vision goes white. [HEAD INJURY][-5hp] Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
+                                    {"range": [11, 20], "result": -1, "status": "SCRATCHED", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You jerk back but not quick enough [Scratched][-1hp] Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -657,16 +792,16 @@ app.listen(3000, () => {
 
                         break
 
-                    case '!bot so-r6':
-                        console.log("LIVE Deploying '!bot so-r6'")
-                        message.reply("LIVE Deploying '!bot so-r6'")
+                    case '!bot so-r7':
+                        console.log("LIVE Deploying '!bot so-r7'")
+                        message.reply("LIVE Deploying '!bot so-r7'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 6
+                            const round = 7
                             var replyString
                             var currentState
                             var outcomes = {
