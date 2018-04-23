@@ -726,22 +726,169 @@ app.listen(3000, () => {
 
                     //     break
 
-                    case '!bot test so-r7':
-                        console.log("TEST Deploying '!bot so-r7'")
-                        message.reply("TEST Deploying '!bot so-r7'")
+                    // case '!bot test so-r7':
+                    //     console.log("TEST Deploying '!bot so-r7'")
+                    //     message.reply("TEST Deploying '!bot so-r7'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 7
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 10], "result": -5, "status": "BLEEDING", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You are slammed into the opposite wall, your head hitting metal and for a split second, your vision goes white [HEAD INJURY][-5hp]. Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
+                    //                 {"range": [11, 20], "result": -1, "status": "SCRATCHED", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You jerk back but not quick enough [Scratched][-1hp]. Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
+                                    
+                                    
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
+                                            
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+    
+                    //                         payload += outcome.message
+    
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*Your space suit is punctured...* [Poisoned][-1hp]`
+                    //                         }
+    
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                         status = "DEAD"
+
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         payload += `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You are slammed into the opposite wall, your head hitting metal and for a split second, your vision goes white. You can hear your officer friend yelling something, but the ringing in your ears is too much. Your assailant doesn’t relent. You heard gun shots, though you aren’t sure from whom, before pain blooms abruptly from your abdomen. When you look down, all you see is red. \n\nAs you slump slowly to the floor, ears still ringing, you come to the realisation that you recognise the boots of the monster before you. And when you look up, your vision fading, your last thoughts are that your murderer looks eerily like another Intergalactic officer… [Instant death][-25hp]\n\n*Game over! Better luck next time!*\`\`\``
+                    //                     }
+    
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 // member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                    //             } else {
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("Test complete!")
+
+                    //     break
+
+                    // case '!bot so-r7':
+                    //     console.log("LIVE Deploying '!bot so-r7'")
+                    //     message.reply("LIVE Deploying '!bot so-r7'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 7
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 10], "result": -5, "status": "BLEEDING", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You are slammed into the opposite wall, your head hitting metal and for a split second, your vision goes white [HEAD INJURY][-5hp]. Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
+                    //                 {"range": [11, 20], "result": -1, "status": "SCRATCHED", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You jerk back but not quick enough [Scratched][-1hp]. Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             // This checks if the player has existence in this round (i.e. not dead from a previous round)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
+                                    
+                                    
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
+                                            
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         payload += outcome.message
+
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*Your head pulses...* [Poisoned][-1hp]`
+                    //                         }
+
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                         status = "DEAD"
+
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         payload += `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You are slammed into the opposite wall, your head hitting metal and for a split second, your vision goes white. You can hear your officer friend yelling something, but the ringing in your ears is too much. Your assailant doesn’t relent. You heard gun shots, though you aren’t sure from whom, before pain blooms abruptly from your abdomen. When you look down, all you see is red. \n\nAs you slump slowly to the floor, ears still ringing, you come to the realisation that you recognise the boots of the monster before you. And when you look up, your vision fading, your last thoughts are that your murderer looks eerily like another Intergalactic officer… [Instant death][-25hp]\n\n*Game over! Better luck next time!*\`\`\``
+                    //                     }
+
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                    //             } else {
+                    //                 // Alternative response if player has died previously.
+                    //                 message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("LIVE Deploy complete!")
+
+                    //     break
+
+                    
+                    case '!bot test so-r8':
+                        console.log("TEST Deploying '!bot so-r8'")
+                        message.reply("TEST Deploying '!bot so-r8'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 7
+                            const round = 8
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 10], "result": -5, "status": "BLEEDING", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You are slammed into the opposite wall, your head hitting metal and for a split second, your vision goes white [HEAD INJURY][-5hp]. Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
-                                    {"range": [11, 20], "result": -1, "status": "SCRATCHED", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You jerk back but not quick enough [Scratched][-1hp]. Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
+                                    {"range": [1, 5], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                                    {"range": [6, 10], "result": 0, "status": "WRECKED", "message": `The alien seems to come to life before your eyes for one last, desperate attack. Neither you nor your companion were fast enough to react. It lunges for you, sinking razor sharp claws around your legs [SLASHED][-8hp]. You cry out in pain and fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and helps you stumble to your feet. \n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                                    {"range": [11, 15], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                                    {"range": [16, 20], "result": 0, "status": "HEART RACING", "message": `You act on instinct and shout a warning to your friend. You pull him back, just as the alien seems to come to life for one more desperate attack. Your warning serves you well. Your companion snaps out of his horrified trance and begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you a grateful look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -766,17 +913,12 @@ app.listen(3000, () => {
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*Your space suit is punctured...* [Poisoned][-1hp]`
+                                                payload += `\n\n*You feel an ache in your limbs* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                         }
                                         else if(currentState.rollResult == "lowest"){
-                                            status = "DEAD"
-
-                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
-
-                                            payload += `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You are slammed into the opposite wall, your head hitting metal and for a split second, your vision goes white. You can hear your officer friend yelling something, but the ringing in your ears is too much. Your assailant doesn’t relent. You heard gun shots, though you aren’t sure from whom, before pain blooms abruptly from your abdomen. When you look down, all you see is red. \n\nAs you slump slowly to the floor, ears still ringing, you come to the realisation that you recognise the boots of the monster before you. And when you look up, your vision fading, your last thoughts are that your murderer looks eerily like another Intergalactic officer… [Instant death][-25hp]\n\n*Game over! Better luck next time!*\`\`\``
                                         }
     
                                     })
@@ -797,22 +939,24 @@ app.listen(3000, () => {
 
                         break
 
-                    case '!bot so-r7':
-                        console.log("LIVE Deploying '!bot so-r7'")
-                        message.reply("LIVE Deploying '!bot so-r7'")
+                    case '!bot so-r8':
+                        console.log("LIVE Deploying '!bot so-r8'")
+                        message.reply("LIVE Deploying '!bot so-r8'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 7
+                            const round = 8
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 10], "result": -5, "status": "BLEEDING", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You are slammed into the opposite wall, your head hitting metal and for a split second, your vision goes white [HEAD INJURY][-5hp]. Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
-                                    {"range": [11, 20], "result": -1, "status": "SCRATCHED", "message": `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You jerk back but not quick enough [Scratched][-1hp]. Your officer friend acts instinctively. He flings your assailant off you and swiftly shoots it dead on the floor. When he shines his torch upon it, you are shocked to see it is what looks like another Intergalactic officer. Your companion steps closer, but before your eyes, the dead man’s features melt into a strange alien’s.\n\nThe alien is like nothing you have seen before. You tug on your companion’s arm to urge him to leave the body, but instead he steps forward with curiosity and fascinated horror. The alien’s body bleeds green liquid onto the floor, but you catch a flicker of movement behind its eyelids…`},
+                                    {"range": [1, 5], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                                    {"range": [6, 10], "result": 0, "status": "WRECKED", "message": `The alien seems to come to life before your eyes for one last, desperate attack. Neither you nor your companion were fast enough to react. It lunges for you, sinking razor sharp claws around your legs [SLASHED][-8hp]. You cry out in pain and fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and helps you stumble to your feet. \n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                                    {"range": [11, 15], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                                    {"range": [16, 20], "result": 0, "status": "HEART RACING", "message": `You act on instinct and shout a warning to your friend. You pull him back, just as the alien seems to come to life for one more desperate attack. Your warning serves you well. Your companion snaps out of his horrified trance and begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you a grateful look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -838,17 +982,12 @@ app.listen(3000, () => {
                                             payload += outcome.message
 
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*Your head pulses...* [Poisoned][-1hp]`
+                                                payload += `\n\n*You feel an ache in your limbs* [Poisoned][-1hp]`
                                             }
 
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                         }
                                         else if(currentState.rollResult == "lowest"){
-                                            status = "DEAD"
-
-                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
-
-                                            payload += `It is pitch black outside, and the officer’s torch can only shine so far. You barely see a flash of movement before something lunges towards you! You are slammed into the opposite wall, your head hitting metal and for a split second, your vision goes white. You can hear your officer friend yelling something, but the ringing in your ears is too much. Your assailant doesn’t relent. You heard gun shots, though you aren’t sure from whom, before pain blooms abruptly from your abdomen. When you look down, all you see is red. \n\nAs you slump slowly to the floor, ears still ringing, you come to the realisation that you recognise the boots of the monster before you. And when you look up, your vision fading, your last thoughts are that your murderer looks eerily like another Intergalactic officer… [Instant death][-25hp]\n\n*Game over! Better luck next time!*\`\`\``
                                         }
 
                                     })
@@ -869,7 +1008,6 @@ app.listen(3000, () => {
                         message.reply("LIVE Deploy complete!")
 
                         break
-
                 }
                 console.log(message.author.username)
             }
