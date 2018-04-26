@@ -871,24 +871,160 @@ app.listen(3000, () => {
                     //     break
 
                     
-                    case '!bot test so-r8':
-                        console.log("TEST Deploying '!bot so-r8'")
-                        message.reply("TEST Deploying '!bot so-r8'")
+                    // case '!bot test so-r8':
+                    //     console.log("TEST Deploying '!bot so-r8'")
+                    //     message.reply("TEST Deploying '!bot so-r8'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 8
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 5], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                    //                 {"range": [6, 10], "result": 0, "status": "WRECKED", "message": `The alien seems to come to life before your eyes for one last, desperate attack. Neither you nor your companion were fast enough to react. It lunges for you, sinking razor sharp claws around your legs [SLASHED][-8hp]. You cry out in pain and fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and helps you stumble to your feet. \n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                    //                 {"range": [11, 15], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                    //                 {"range": [16, 20], "result": 0, "status": "HEART RACING", "message": `You act on instinct and shout a warning to your friend. You pull him back, just as the alien seems to come to life for one more desperate attack. Your warning serves you well. Your companion snaps out of his horrified trance and begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you a grateful look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
+                                    
+                                    
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
+                                            
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+    
+                    //                         payload += outcome.message
+    
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*You feel an ache in your limbs* [Poisoned][-1hp]`
+                    //                         }
+    
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                     }
+    
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 // member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                    //             } else {
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("Test complete!")
+
+                    //     break
+
+                    // case '!bot so-r8':
+                    //     console.log("LIVE Deploying '!bot so-r8'")
+                    //     message.reply("LIVE Deploying '!bot so-r8'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 8
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 5], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                    //                 {"range": [6, 10], "result": 0, "status": "WRECKED", "message": `The alien seems to come to life before your eyes for one last, desperate attack. Neither you nor your companion were fast enough to react. It lunges for you, sinking razor sharp claws around your legs [SLASHED][-8hp]. You cry out in pain and fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and helps you stumble to your feet. \n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                    //                 {"range": [11, 15], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                    //                 {"range": [16, 20], "result": 0, "status": "HEART RACING", "message": `You act on instinct and shout a warning to your friend. You pull him back, just as the alien seems to come to life for one more desperate attack. Your warning serves you well. Your companion snaps out of his horrified trance and begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you a grateful look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             // This checks if the player has existence in this round (i.e. not dead from a previous round)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
+                                    
+                                    
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
+                                            
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         payload += outcome.message
+
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*You feel an ache in your limbs* [Poisoned][-1hp]`
+                    //                         }
+
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                     }
+
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                    //             } else {
+                    //                 // Alternative response if player has died previously.
+                    //                 message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("LIVE Deploy complete!")
+
+                    //     break
+                    
+                    
+                    case '!bot test so-r9':
+                        console.log("TEST Deploying '!bot so-r9'")
+                        message.reply("TEST Deploying '!bot so-r9'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 8
+                            const round = 9
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 5], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
-                                    {"range": [6, 10], "result": 0, "status": "WRECKED", "message": `The alien seems to come to life before your eyes for one last, desperate attack. Neither you nor your companion were fast enough to react. It lunges for you, sinking razor sharp claws around your legs [SLASHED][-8hp]. You cry out in pain and fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and helps you stumble to your feet. \n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
-                                    {"range": [11, 15], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
-                                    {"range": [16, 20], "result": 0, "status": "HEART RACING", "message": `You act on instinct and shout a warning to your friend. You pull him back, just as the alien seems to come to life for one more desperate attack. Your warning serves you well. Your companion snaps out of his horrified trance and begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you a grateful look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                                    {"range": [1, 20], "result": 0, "status": "HOPEFUL", "message": `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. After all that’s happened, what’s one more risk? Despite his reluctance, you eventually manage to persuade him, and the both of you trek your way slowly down the darkness and towards the elusive glow. You stumble over what feels suspiciously like bodies on the way, but you don’t dare to look. You descend into the Lower Decks, where a carnage is all that remains of the once precious cargo aboard the ship.\n\nYou pick your way across the remains of boxes and containers, including that which once held the poisonous gas now permeating most parts of the ship. Eventually, the glowing leads to a pile of broken crates that seem to hold ancient artefacts, native to your homeworld… `},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -913,12 +1049,17 @@ app.listen(3000, () => {
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*You feel an ache in your limbs* [Poisoned][-1hp]`
+                                                payload += `\n\n*Your vision blurs for a moment...* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                         }
                                         else if(currentState.rollResult == "lowest"){
+                                            status = "DEAD"
+
+                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                                            payload += `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. He paces restlessly as you try to talk him into it, but it seems he’s not listening. In fact, he seems to be thinking very hard about something else…\n\nYou stop pleading mid-sentence when his head suddenly snaps up to look at you. There is an eerie determination in his eyes. “I’m sorry,” he says, and he seems sincere in this, “But I can’t let you do this.” He raises his firearm to your chest. You slowly back away.\n\n“You can go on without me,” you try, but it seems his mind is made up.\n\nHe shakes his head. “I can’t risk loose ends… and you’re far too suspicious to be left alone. Forgive me.” You hear the loud ‘BANG!’ but don’t dare look down, even as you feel a ripping pain through your abdomen [Instant Death][-25hp]. He watches as your legs give out beneath you and you sink to the floor, with something like pity in his eyes. The last thing you see before your vision turns to black are his steel-soled boots walking away... \n\n*Game over! Better luck next time!*\`\`\``
                                         }
     
                                     })
@@ -939,24 +1080,21 @@ app.listen(3000, () => {
 
                         break
 
-                    case '!bot so-r8':
-                        console.log("LIVE Deploying '!bot so-r8'")
-                        message.reply("LIVE Deploying '!bot so-r8'")
+                    case '!bot so-r9':
+                        console.log("LIVE Deploying '!bot so-r9'")
+                        message.reply("LIVE Deploying '!bot so-r9'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 8
+                            const round = 9
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 5], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
-                                    {"range": [6, 10], "result": 0, "status": "WRECKED", "message": `The alien seems to come to life before your eyes for one last, desperate attack. Neither you nor your companion were fast enough to react. It lunges for you, sinking razor sharp claws around your legs [SLASHED][-8hp]. You cry out in pain and fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and helps you stumble to your feet. \n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
-                                    {"range": [11, 15], "result": -2, "status": "FREAKING OUT", "message": `You are just a second too late in shouting a warning to your friend. He freezes, then staggers back just as the alien seems to come to life for one more desperate attack. It lunges for you. You try to run, but you’re just not fast enough [TRIPPED][-2hp]. You fall to the floor, but it seems at least your companion has finally snapped out of his horrified trance. He begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you an apologetic look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
-                                    {"range": [16, 20], "result": 0, "status": "HEART RACING", "message": `You act on instinct and shout a warning to your friend. You pull him back, just as the alien seems to come to life for one more desperate attack. Your warning serves you well. Your companion snaps out of his horrified trance and begins to shoot the creature, again and again, until it slumps, lifeless for sure this time, to the floor. The officer gives you a grateful look and gives you a pat on the shoulder.\n\nUnnerved, you try to shake off what just happened and focus on getting out of here. As you turn to leave the corridor, a mysterious glow coming from the Lower Deck catches your eye. The warmth of the glow is strangely familiar. You point it out to your companion. He looks at you as if you’ve gone crazy, then shakes his head aggressively. He insists it is better to forget about it…`},
+                                    {"range": [1, 20], "result": 0, "status": "HOPEFUL", "message": `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. After all that’s happened, what’s one more risk? Despite his reluctance, you eventually manage to persuade him, and the both of you trek your way slowly down the darkness and towards the elusive glow. You stumble over what feels suspiciously like bodies on the way, but you don’t dare to look. You descend into the Lower Decks, where a carnage is all that remains of the once precious cargo aboard the ship.\n\nYou pick your way across the remains of boxes and containers, including that which once held the poisonous gas now permeating most parts of the ship. Eventually, the glowing leads to a pile of broken crates that seem to hold ancient artefacts, native to your homeworld… `},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -982,12 +1120,17 @@ app.listen(3000, () => {
                                             payload += outcome.message
 
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*You feel an ache in your limbs* [Poisoned][-1hp]`
+                                                payload += `\n\n*Your vision blurs for a moment...* [Poisoned][-1hp]`
                                             }
 
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                         }
                                         else if(currentState.rollResult == "lowest"){
+                                            status = "DEAD"
+
+                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                                            payload += `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. He paces restlessly as you try to talk him into it, but it seems he’s not listening. In fact, he seems to be thinking very hard about something else…\n\nYou stop pleading mid-sentence when his head suddenly snaps up to look at you. There is an eerie determination in his eyes. “I’m sorry,” he says, and he seems sincere in this, “But I can’t let you do this.” He raises his firearm to your chest. You slowly back away.\n\n“You can go on without me,” you try, but it seems his mind is made up.\n\nHe shakes his head. “I can’t risk loose ends… and you’re far too suspicious to be left alone. Forgive me.” You hear the loud ‘BANG!’ but don’t dare look down, even as you feel a ripping pain through your abdomen [Instant Death][-25hp]. He watches as your legs give out beneath you and you sink to the floor, with something like pity in his eyes. The last thing you see before your vision turns to black are his steel-soled boots walking away... \n\n*Game over! Better luck next time!*\`\`\``
                                         }
 
                                     })
