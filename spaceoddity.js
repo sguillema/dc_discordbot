@@ -1010,21 +1010,164 @@ app.listen(3000, () => {
                     //     break
                     
                     
-                    case '!bot test so-r9':
-                        console.log("TEST Deploying '!bot so-r9'")
-                        message.reply("TEST Deploying '!bot so-r9'")
+                    // case '!bot test so-r9':
+                    //     console.log("TEST Deploying '!bot so-r9'")
+                    //     message.reply("TEST Deploying '!bot so-r9'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 9
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 20], "result": 0, "status": "HOPEFUL", "message": `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. After all that’s happened, what’s one more risk? Despite his reluctance, you eventually manage to persuade him, and the both of you trek your way slowly down the darkness and towards the elusive glow. You stumble over what feels suspiciously like bodies on the way, but you don’t dare to look. You descend into the Lower Decks, where a carnage is all that remains of the once precious cargo aboard the ship.\n\nYou pick your way across the remains of boxes and containers, including that which once held the poisonous gas now permeating most parts of the ship. Eventually, the glowing leads to a pile of broken crates that seem to hold ancient artefacts, native to your homeworld… `},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
+                                    
+                                    
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
+                                            
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+    
+                    //                         payload += outcome.message
+    
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*Your vision blurs for a moment...* [Poisoned][-1hp]`
+                    //                         }
+    
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                         status = "DEAD"
+
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         payload += `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. He paces restlessly as you try to talk him into it, but it seems he’s not listening. In fact, he seems to be thinking very hard about something else…\n\nYou stop pleading mid-sentence when his head suddenly snaps up to look at you. There is an eerie determination in his eyes. “I’m sorry,” he says, and he seems sincere in this, “But I can’t let you do this.” He raises his firearm to your chest. You slowly back away.\n\n“You can go on without me,” you try, but it seems his mind is made up.\n\nHe shakes his head. “I can’t risk loose ends… and you’re far too suspicious to be left alone. Forgive me.” You hear the loud ‘BANG!’ but don’t dare look down, even as you feel a ripping pain through your abdomen [Instant Death][-25hp]. He watches as your legs give out beneath you and you sink to the floor, with something like pity in his eyes. The last thing you see before your vision turns to black are his steel-soled boots walking away... \n\n*Game over! Better luck next time!*\`\`\``
+                    //                     }
+    
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 // member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                    //             } else {
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("Test complete!")
+
+                    //     break
+
+                    // case '!bot so-r9':
+                    //     console.log("LIVE Deploying '!bot so-r9'")
+                    //     message.reply("LIVE Deploying '!bot so-r9'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 9
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 20], "result": 0, "status": "HOPEFUL", "message": `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. After all that’s happened, what’s one more risk? Despite his reluctance, you eventually manage to persuade him, and the both of you trek your way slowly down the darkness and towards the elusive glow. You stumble over what feels suspiciously like bodies on the way, but you don’t dare to look. You descend into the Lower Decks, where a carnage is all that remains of the once precious cargo aboard the ship.\n\nYou pick your way across the remains of boxes and containers, including that which once held the poisonous gas now permeating most parts of the ship. Eventually, the glowing leads to a pile of broken crates that seem to hold ancient artefacts, native to your homeworld… `},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             // This checks if the player has existence in this round (i.e. not dead from a previous round)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
+                                    
+                                    
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
+                                            
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         payload += outcome.message
+
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*Your vision blurs for a moment...* [Poisoned][-1hp]`
+                    //                         }
+
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                         status = "DEAD"
+
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         payload += `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. He paces restlessly as you try to talk him into it, but it seems he’s not listening. In fact, he seems to be thinking very hard about something else…\n\nYou stop pleading mid-sentence when his head suddenly snaps up to look at you. There is an eerie determination in his eyes. “I’m sorry,” he says, and he seems sincere in this, “But I can’t let you do this.” He raises his firearm to your chest. You slowly back away.\n\n“You can go on without me,” you try, but it seems his mind is made up.\n\nHe shakes his head. “I can’t risk loose ends… and you’re far too suspicious to be left alone. Forgive me.” You hear the loud ‘BANG!’ but don’t dare look down, even as you feel a ripping pain through your abdomen [Instant Death][-25hp]. He watches as your legs give out beneath you and you sink to the floor, with something like pity in his eyes. The last thing you see before your vision turns to black are his steel-soled boots walking away... \n\n*Game over! Better luck next time!*\`\`\``
+                    //                     }
+
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                    //             } else {
+                    //                 // Alternative response if player has died previously.
+                    //                 message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("LIVE Deploy complete!")
+
+                    //     break
+                     
+                    case '!bot test so-r10':
+                        console.log("TEST Deploying '!bot so-r10'")
+                        message.reply("TEST Deploying '!bot so-r10'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 9
+                            const round = 10
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 20], "result": 0, "status": "HOPEFUL", "message": `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. After all that’s happened, what’s one more risk? Despite his reluctance, you eventually manage to persuade him, and the both of you trek your way slowly down the darkness and towards the elusive glow. You stumble over what feels suspiciously like bodies on the way, but you don’t dare to look. You descend into the Lower Decks, where a carnage is all that remains of the once precious cargo aboard the ship.\n\nYou pick your way across the remains of boxes and containers, including that which once held the poisonous gas now permeating most parts of the ship. Eventually, the glowing leads to a pile of broken crates that seem to hold ancient artefacts, native to your homeworld… `},
+                                    {"range": [1, 19], "result": 0, "status": "HOMESICK", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… despite your pleas, he determines they are too dangerous to bring along. You are reluctant to leave them behind, but it isn’t the time to argue.\n\nYou both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room…`},
+                                    {"range": [20, 20], "result": 0, "status": "FEELING SAFE", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… but you manage to convince him to bring along at least one piece with you [Golden Pencil obtained][+1 life saving on an event that would kill you].\n\nOnce the item is safely stored away on your person, you both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room… `},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -1038,28 +1181,34 @@ app.listen(3000, () => {
                                     var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
                                     var health = currentState.health
                                     var status = ''
-                                    
+
                                     
                                     outcomes.outcomes.forEach((outcome)=>{
                                         if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
                                             status = outcome.status
                                             
-                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                                            if( currentState.item == "pencil") {
+                                                payload += `\n> You have a Golden Pencil!`
+                                            }
+
+                                            payload += `\n\n--------\n\nUPDATE: \n`
     
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*Your vision blurs for a moment...* [Poisoned][-1hp]`
+                                                payload += `\n\n*You feel a cold sweat...* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                         }
                                         else if(currentState.rollResult == "lowest"){
-                                            status = "DEAD"
+                                            // status = "DEAD"
 
-                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+                                            // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
-                                            payload += `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. He paces restlessly as you try to talk him into it, but it seems he’s not listening. In fact, he seems to be thinking very hard about something else…\n\nYou stop pleading mid-sentence when his head suddenly snaps up to look at you. There is an eerie determination in his eyes. “I’m sorry,” he says, and he seems sincere in this, “But I can’t let you do this.” He raises his firearm to your chest. You slowly back away.\n\n“You can go on without me,” you try, but it seems his mind is made up.\n\nHe shakes his head. “I can’t risk loose ends… and you’re far too suspicious to be left alone. Forgive me.” You hear the loud ‘BANG!’ but don’t dare look down, even as you feel a ripping pain through your abdomen [Instant Death][-25hp]. He watches as your legs give out beneath you and you sink to the floor, with something like pity in his eyes. The last thing you see before your vision turns to black are his steel-soled boots walking away... \n\n*Game over! Better luck next time!*\`\`\``
+                                            // payload += `\n\n*Game over! Better luck next time!*\`\`\``
                                         }
     
                                     })
@@ -1080,21 +1229,22 @@ app.listen(3000, () => {
 
                         break
 
-                    case '!bot so-r9':
-                        console.log("LIVE Deploying '!bot so-r9'")
-                        message.reply("LIVE Deploying '!bot so-r9'")
+                    case '!bot so-r10':
+                        console.log("LIVE Deploying '!bot so-r10'")
+                        message.reply("LIVE Deploying '!bot so-r10'")
 
                         message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                             var payload = ``
                             var memberId = member.id
                             // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 9
+                            const round = 10
                             var replyString
                             var currentState
                             var outcomes = {
                                 outcomes: [
-                                    {"range": [1, 20], "result": 0, "status": "HOPEFUL", "message": `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. After all that’s happened, what’s one more risk? Despite his reluctance, you eventually manage to persuade him, and the both of you trek your way slowly down the darkness and towards the elusive glow. You stumble over what feels suspiciously like bodies on the way, but you don’t dare to look. You descend into the Lower Decks, where a carnage is all that remains of the once precious cargo aboard the ship.\n\nYou pick your way across the remains of boxes and containers, including that which once held the poisonous gas now permeating most parts of the ship. Eventually, the glowing leads to a pile of broken crates that seem to hold ancient artefacts, native to your homeworld… `},
+                                    {"range": [1, 19], "result": 0, "status": "HOMESICK", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… despite your pleas, he determines they are too dangerous to bring along. You are reluctant to leave them behind, but it isn’t the time to argue.\n\nYou both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room…`},
+                                    {"range": [20, 20], "result": 0, "status": "FEELING SAFE", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… but you manage to convince him to bring along at least one piece with you [Golden Pencil obtained][+1 life saving on an event that would kill you].\n\nOnce the item is safely stored away on your person, you both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room… `},
                                 ]
                             }
                             // console.log(participants[memberId])
@@ -1115,22 +1265,22 @@ app.listen(3000, () => {
                                         if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
                                             status = outcome.status
                                             
-                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
-
+                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> You have a Golden Pencil!\n\n--------\n\nUPDATE: \n`
+    
                                             payload += outcome.message
-
+    
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*Your vision blurs for a moment...* [Poisoned][-1hp]`
+                                                payload += `\n\n*You feel a cold sweat...* [Poisoned][-1hp]`
                                             }
-
+    
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                         }
                                         else if(currentState.rollResult == "lowest"){
-                                            status = "DEAD"
+                                            // status = "DEAD"
 
-                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+                                            // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
-                                            payload += `You attempt to argue your case with the officer. He is obviously unwilling to risk the detour, but you insist you have a good feeling about this. He paces restlessly as you try to talk him into it, but it seems he’s not listening. In fact, he seems to be thinking very hard about something else…\n\nYou stop pleading mid-sentence when his head suddenly snaps up to look at you. There is an eerie determination in his eyes. “I’m sorry,” he says, and he seems sincere in this, “But I can’t let you do this.” He raises his firearm to your chest. You slowly back away.\n\n“You can go on without me,” you try, but it seems his mind is made up.\n\nHe shakes his head. “I can’t risk loose ends… and you’re far too suspicious to be left alone. Forgive me.” You hear the loud ‘BANG!’ but don’t dare look down, even as you feel a ripping pain through your abdomen [Instant Death][-25hp]. He watches as your legs give out beneath you and you sink to the floor, with something like pity in his eyes. The last thing you see before your vision turns to black are his steel-soled boots walking away... \n\n*Game over! Better luck next time!*\`\`\``
+                                            // payload += `\n\n*Game over! Better luck next time!*\`\`\``
                                         }
 
                                     })
