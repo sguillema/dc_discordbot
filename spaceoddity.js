@@ -1265,7 +1265,13 @@ app.listen(3000, () => {
                                         if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
                                             status = outcome.status
                                             
-                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> You have a Golden Pencil!\n\n--------\n\nUPDATE: \n`
+                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                                            if( currentState.item == "pencil") {
+                                                payload += `\n> You have a Golden Pencil!`
+                                            }
+
+                                            payload += `\n\n--------\n\nUPDATE: \n`
     
                                             payload += outcome.message
     
