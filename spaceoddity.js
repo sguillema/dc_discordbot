@@ -1152,161 +1152,353 @@ app.listen(3000, () => {
 
                     //     break
                      
-                    case '!bot test so-r10':
-                        console.log("TEST Deploying '!bot so-r10'")
-                        message.reply("TEST Deploying '!bot so-r10'")
+                    // case '!bot test so-r10':
+                    //     console.log("TEST Deploying '!bot so-r10'")
+                    //     message.reply("TEST Deploying '!bot so-r10'")
 
-                        message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
-                            var payload = ``
-                            var memberId = member.id
-                            // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 10
-                            var replyString
-                            var currentState
-                            var outcomes = {
-                                outcomes: [
-                                    {"range": [1, 19], "result": 0, "status": "HOMESICK", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… despite your pleas, he determines they are too dangerous to bring along. You are reluctant to leave them behind, but it isn’t the time to argue.\n\nYou both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room…`},
-                                    {"range": [20, 20], "result": 0, "status": "FEELING SAFE", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… but you manage to convince him to bring along at least one piece with you [Golden Pencil obtained][+1 life saving on an event that would kill you].\n\nOnce the item is safely stored away on your person, you both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room… `},
-                                ]
-                            }
-                            // console.log(participants[memberId])
-                            if (!!participants[memberId] || participants[memberId] == 0){
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 10
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 19], "result": 0, "status": "HOMESICK", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… despite your pleas, he determines they are too dangerous to bring along. You are reluctant to leave them behind, but it isn’t the time to argue.\n\nYou both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room…`},
+                    //                 {"range": [20, 20], "result": 0, "status": "FEELING SAFE", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… but you manage to convince him to bring along at least one piece with you [Golden Pencil obtained][+1 life saving on an event that would kill you].\n\nOnce the item is safely stored away on your person, you both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room… `},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
                                 
-                                console.log("Exists -- "+member.displayName)
-                                if(results.players[participants[memberId]].history.length >= round){
-                                    currentState = results.players[participants[memberId]].history[round - 1]
-                                    // console.log(currentState)
-                                    // console.log(currentState.health+`\n`)
-                                    var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-                                    var health = currentState.health
-                                    var status = ''
+                    //             console.log("Exists -- "+member.displayName)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
 
                                     
-                                    outcomes.outcomes.forEach((outcome)=>{
-                                        if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
-                                            status = outcome.status
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
                                             
-                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                    //                         if( currentState.item == "pencil") {
+                    //                             payload += `\n> You have a Golden Pencil!`
+                    //                         }
+
+                    //                         payload += `\n\n--------\n\nUPDATE: \n`
+    
+                    //                         payload += outcome.message
+    
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*You feel a cold sweat...* [Poisoned][-1hp]`
+                    //                         }
+    
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                         // status = "DEAD"
+
+                    //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         // payload += `\n\n*Game over! Better luck next time!*\`\`\``
+                    //                     }
+    
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 // member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                    //             } else {
+                    //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("Test complete!")
+
+                    //     break
+
+                    // case '!bot so-r10':
+                    //     console.log("LIVE Deploying '!bot so-r10'")
+                    //     message.reply("LIVE Deploying '!bot so-r10'")
+
+                    //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                    //         var payload = ``
+                    //         var memberId = member.id
+                    //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                    //         const round = 10
+                    //         var replyString
+                    //         var currentState
+                    //         var outcomes = {
+                    //             outcomes: [
+                    //                 {"range": [1, 19], "result": 0, "status": "HOMESICK", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… despite your pleas, he determines they are too dangerous to bring along. You are reluctant to leave them behind, but it isn’t the time to argue.\n\nYou both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room…`},
+                    //                 {"range": [20, 20], "result": 0, "status": "FEELING SAFE", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… but you manage to convince him to bring along at least one piece with you [Golden Pencil obtained][+1 life saving on an event that would kill you].\n\nOnce the item is safely stored away on your person, you both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room… `},
+                    //             ]
+                    //         }
+                    //         // console.log(participants[memberId])
+                    //         if (!!participants[memberId] || participants[memberId] == 0){
+                                
+                    //             console.log("Exists -- "+member.displayName)
+                    //             // This checks if the player has existence in this round (i.e. not dead from a previous round)
+                    //             if(results.players[participants[memberId]].history.length >= round){
+                    //                 currentState = results.players[participants[memberId]].history[round - 1]
+                    //                 // console.log(currentState)
+                    //                 // console.log(currentState.health+`\n`)
+                    //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                    //                 var health = currentState.health
+                    //                 var status = ''
+                                    
+                                    
+                    //                 outcomes.outcomes.forEach((outcome)=>{
+                    //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                    //                         status = outcome.status
+                                            
+                    //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                    //                         if( currentState.item == "pencil") {
+                    //                             payload += `\n> You have a Golden Pencil!`
+                    //                         }
+
+                    //                         payload += `\n\n--------\n\nUPDATE: \n`
+    
+                    //                         payload += outcome.message
+    
+                    //                         if(currentState.poisoned == true){
+                    //                             payload += `\n\n*You feel a cold sweat...* [Poisoned][-1hp]`
+                    //                         }
+    
+                    //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                    //                     }
+                    //                     else if(currentState.rollResult == "lowest"){
+                    //                         // status = "DEAD"
+
+                    //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                    //                         // payload += `\n\n*Game over! Better luck next time!*\`\`\``
+                    //                     }
+
+                    //                 })
+                                    
+                    //                 // Send payload
+                    //                 member.send(payload)
+                    //                 message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                    //             } else {
+                    //                 // Alternative response if player has died previously.
+                    //                 message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                    //             }
+                    //         } else {
+                    //             console.log("FAILED -- "+member.displayName)
+                    //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                    //         }
+                    //     })
+
+                    //     message.reply("LIVE Deploy complete!")
+
+                    //     break
+
+                    case '!bot test so-r11':
+                    console.log("TEST Deploying '!bot so-r11'")
+                    message.reply("TEST Deploying '!bot so-r11'")
+
+                    message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                        var payload = ``
+                        var memberId = member.id
+                        // CHANGE THE ROUND EVERY ROUND PLEASE.
+                        const round = 11
+                        var replyString
+                        var currentState
+                        var outcomes = {
+                            outcomes: [
+                                {"range": [1, 5], "result": -3, "status": "SCORCHED", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel the flames lick your feet and sweat pour down your back [SCORCHED][-3hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                                {"range": [6, 6], "result": -5, "status": "SEVERE BURNS", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel your boots beginning to melt and your hair begin to smoke [SEVERE BURNS][-5hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                            ]
+                        }
+                        // console.log(participants[memberId])
+                        if (!!participants[memberId] || participants[memberId] == 0){
+                            
+                            console.log("Exists -- "+member.displayName)
+                            if(results.players[participants[memberId]].history.length >= round){
+                                currentState = results.players[participants[memberId]].history[round - 1]
+                                // console.log(currentState)
+                                // console.log(currentState.health+`\n`)
+                                var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                                var health = currentState.health
+                                var status = ''
+
+                                
+                                outcomes.outcomes.forEach((outcome)=>{
+                                    if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                                        status = outcome.status
+                                        if(currentState.alive == false){
+                                            status = "DEAD"
+                                        }
+                                        
+                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                                        if(currentState.alive == true){
 
                                             if( currentState.item == "pencil") {
                                                 payload += `\n> You have a Golden Pencil!`
                                             }
-
+    
                                             payload += `\n\n--------\n\nUPDATE: \n`
     
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*You feel a cold sweat...* [Poisoned][-1hp]`
+                                                payload += `\n\n*For a moment, you see doubles of everything in the room...* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
-                                        }
-                                        else if(currentState.rollResult == "lowest"){
-                                            // status = "DEAD"
 
-                                            // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+                                        } else if(currentState.alive == false){
 
-                                            // payload += `\n\n*Game over! Better luck next time!*\`\`\``
-                                        }
+                                            payload += `\n\n--------\n\nUPDATE: \n`
     
-                                    })
-                                    
-                                    // Send payload
-                                    // member.send(payload)
-                                    message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
-                                } else {
-                                    message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
-                                }
-                            } else {
-                                console.log("FAILED -- "+member.displayName)
-                                message.channel.send("Round "+round+" Update failed for "+member.displayName)
-                            }
-                        })
+                                            payload += outcome.message
 
-                        message.reply("Test complete!")
+                                            payload += `\n\nBefore you can react, your knees give way under you. Your head spins, your vision fades... The injuries you've experienced have finally taken their toll...`
+    
+                                            payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
 
-                        break
+                                        }
 
-                    case '!bot so-r10':
-                        console.log("LIVE Deploying '!bot so-r10'")
-                        message.reply("LIVE Deploying '!bot so-r10'")
+                                    }
+                                    else if(currentState.rollResult == "lowest"){
+                                        status = "DEAD"
 
-                        message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
-                            var payload = ``
-                            var memberId = member.id
-                            // CHANGE THE ROUND EVERY ROUND PLEASE.
-                            const round = 10
-                            var replyString
-                            var currentState
-                            var outcomes = {
-                                outcomes: [
-                                    {"range": [1, 19], "result": 0, "status": "HOMESICK", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… despite your pleas, he determines they are too dangerous to bring along. You are reluctant to leave them behind, but it isn’t the time to argue.\n\nYou both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room…`},
-                                    {"range": [20, 20], "result": 0, "status": "FEELING SAFE", "message": `Amid the carnage you see a collection of Golden Pencils, nestled under the ruins of wooden crates. Even through your space suit, you can feel a familiar warmth coming from them, and you swear for an instant you can smell home. Your officer friend however, is wary of the artefacts, and regards them with a great deal of suspicion… but you manage to convince him to bring along at least one piece with you [Golden Pencil obtained][+1 life saving on an event that would kill you].\n\nOnce the item is safely stored away on your person, you both begin to make it back up to the upper levels. However, as you stumble through the wrecked cargo, your foot sends something skidding harshly across the floor. You look, as if in slow motion, to see the object spark from the impact, then flicker into flame upon contact with the poison gas that permeates the room… `},
-                                ]
-                            }
-                            // console.log(participants[memberId])
-                            if (!!participants[memberId] || participants[memberId] == 0){
+                                        payload += `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor, faster than you can keep up. Your injuries so far have slowed you down, and your officer friend doesn’t seem to hear you call for help through the acrid smoke. \n\nYou watch in horror and helplessness as he disappears ahead in a swirl of flames, your boots searing your feet as they melt into the ground. You can feel your whole body burning with a searing heat, and you know it’s too late for you… [Instant Death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
+                                    }
+
+                                })
                                 
-                                console.log("Exists -- "+member.displayName)
-                                // This checks if the player has existence in this round (i.e. not dead from a previous round)
-                                if(results.players[participants[memberId]].history.length >= round){
-                                    currentState = results.players[participants[memberId]].history[round - 1]
-                                    // console.log(currentState)
-                                    // console.log(currentState.health+`\n`)
-                                    var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-                                    var health = currentState.health
-                                    var status = ''
-                                    
-                                    
-                                    outcomes.outcomes.forEach((outcome)=>{
-                                        if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
-                                            status = outcome.status
-                                            
-                                            payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+                                // Send payload
+                                // member.send(payload)
+                                message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                            } else {
+                                message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                            }
+                        } else {
+                            console.log("FAILED -- "+member.displayName)
+                            message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                        }
+                    })
+
+                    message.reply("Test complete!")
+
+                    break
+
+                case '!bot so-r11':
+                    console.log("LIVE Deploying '!bot so-r11'")
+                    message.reply("LIVE Deploying '!bot so-r11'")
+
+                    message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                        var payload = ``
+                        var memberId = member.id
+                        // CHANGE THE ROUND EVERY ROUND PLEASE.
+                        const round = 11
+                        var replyString
+                        var currentState
+                        var outcomes = {
+                            outcomes: [
+                                {"range": [1, 5], "result": -3, "status": "SCORCHED", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel the flames lick your feet and sweat pour down your back [SCORCHED][-3hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                                {"range": [6, 6], "result": -5, "status": "SEVERE BURNS", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel your boots beginning to melt and your hair begin to smoke [SEVERE BURNS][-5hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                            ]
+                        }
+                        // console.log(participants[memberId])
+                        if (!!participants[memberId] || participants[memberId] == 0){
+                            
+                            console.log("Exists -- "+member.displayName)
+                            // This checks if the player has existence in this round (i.e. not dead from a previous round)
+                            if(results.players[participants[memberId]].history.length >= round){
+                                currentState = results.players[participants[memberId]].history[round - 1]
+                                // console.log(currentState)
+                                // console.log(currentState.health+`\n`)
+                                var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                                var health = currentState.health
+                                var status = ''
+                                
+                                
+                                outcomes.outcomes.forEach((outcome)=>{
+                                    if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                                        status = outcome.status
+                                        if(currentState.alive == false){
+                                            status = "DEAD"
+                                        }
+                                        
+                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                                        if(currentState.alive == true){
 
                                             if( currentState.item == "pencil") {
                                                 payload += `\n> You have a Golden Pencil!`
                                             }
-
+    
                                             payload += `\n\n--------\n\nUPDATE: \n`
     
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*You feel a cold sweat...* [Poisoned][-1hp]`
+                                                payload += `\n\n*For a moment, you see doubles of everything in the room...* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                                        } else if(currentState.alive == false){
+
+                                            payload += `\n\n--------\n\nUPDATE: \n`
+    
+                                            payload += outcome.message
+
+                                            payload += `\n\nBefore you can react, your knees give way under you. Your head spins, your vision fades... The injuries you've experienced have finally taken their toll...`
+    
+                                            payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
+
                                         }
-                                        else if(currentState.rollResult == "lowest"){
-                                            // status = "DEAD"
 
-                                            // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+                                    }
+                                    else if(currentState.rollResult == "lowest"){
+                                        status = "DEAD"
 
-                                            // payload += `\n\n*Game over! Better luck next time!*\`\`\``
-                                        }
+                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
-                                    })
-                                    
-                                    // Send payload
-                                    member.send(payload)
-                                    message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
-                                } else {
-                                    // Alternative response if player has died previously.
-                                    message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
-                                }
+                                        payload += `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor, faster than you can keep up. Your injuries so far have slowed you down, and your officer friend doesn’t seem to hear you call for help through the acrid smoke. \n\nYou watch in horror and helplessness as he disappears ahead in a swirl of flames, your boots searing your feet as they melt into the ground. You can feel your whole body burning with a searing heat, and you know it’s too late for you… [Instant Death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
+                                    }
+
+                                })
+                                
+                                // Send payload
+                                member.send(payload)
+                                message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
                             } else {
-                                console.log("FAILED -- "+member.displayName)
-                                message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                                // Alternative response if player has died previously.
+                                message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
                             }
-                        })
+                        } else {
+                            console.log("FAILED -- "+member.displayName)
+                            message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                        }
+                    })
 
-                        message.reply("LIVE Deploy complete!")
+                    message.reply("LIVE Deploy complete!")
 
-                        break
+                    break
                 }
                 console.log(message.author.username)
             }
