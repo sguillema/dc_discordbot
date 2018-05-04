@@ -1308,26 +1308,220 @@ app.listen(3000, () => {
 
                     //     break
 
-                    case '!bot test so-r11':
-                    console.log("TEST Deploying '!bot so-r11'")
-                    message.reply("TEST Deploying '!bot so-r11'")
+                //     case '!bot test so-r11':
+                //     console.log("TEST Deploying '!bot so-r11'")
+                //     message.reply("TEST Deploying '!bot so-r11'")
+
+                //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                //         var payload = ``
+                //         var memberId = member.id
+                //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                //         const round = 11
+                //         var replyString
+                //         var currentState
+                //         var outcomes = {
+                //             outcomes: [
+                //                 {"range": [1, 5], "result": -3, "status": "SCORCHED", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel the flames lick your feet and sweat pour down your back [SCORCHED][-3hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                //                 {"range": [6, 6], "result": -5, "status": "SEVERE BURNS", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel your boots beginning to melt and your hair begin to smoke [SEVERE BURNS][-5hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                //             ]
+                //         }
+                //         // console.log(participants[memberId])
+                //         if (!!participants[memberId] || participants[memberId] == 0){
+                            
+                //             console.log("Exists -- "+member.displayName)
+                //             if(results.players[participants[memberId]].history.length >= round){
+                //                 currentState = results.players[participants[memberId]].history[round - 1]
+                //                 // console.log(currentState)
+                //                 // console.log(currentState.health+`\n`)
+                //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                //                 var health = currentState.health
+                //                 var status = ''
+
+                                
+                //                 outcomes.outcomes.forEach((outcome)=>{
+                //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                //                         status = outcome.status
+                //                         if(currentState.alive == false){
+                //                             status = "DEAD"
+                //                         }
+                                        
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                //                         if(currentState.alive == true){
+
+                //                             if( currentState.item == "pencil") {
+                //                                 payload += `\n> You have a Golden Pencil!`
+                //                             }
+    
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+    
+                //                             payload += outcome.message
+    
+                //                             if(currentState.poisoned == true){
+                //                                 payload += `\n\n*For a moment, you see doubles of everything in the room...* [Poisoned][-1hp]`
+                //                             }
+    
+                //                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                //                         } else if(currentState.alive == false){
+
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+    
+                //                             payload += outcome.message
+
+                //                             payload += `\n\nBefore you can react, your knees give way under you. Your head spins, your vision fades... The injuries you've experienced have finally taken their toll...`
+    
+                //                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
+
+                //                         }
+
+                //                     }
+                //                     else if(currentState.rollResult == "lowest"){
+                //                         status = "DEAD"
+
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                //                         payload += `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor, faster than you can keep up. Your injuries so far have slowed you down, and your officer friend doesn’t seem to hear you call for help through the acrid smoke. \n\nYou watch in horror and helplessness as he disappears ahead in a swirl of flames, your boots searing your feet as they melt into the ground. You can feel your whole body burning with a searing heat, and you know it’s too late for you… [Instant Death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
+                //                     }
+
+                //                 })
+                                
+                //                 // Send payload
+                //                 // member.send(payload)
+                //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                //             } else {
+                //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                //             }
+                //         } else {
+                //             console.log("FAILED -- "+member.displayName)
+                //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                //         }
+                //     })
+
+                //     message.reply("Test complete!")
+
+                //     break
+
+                // case '!bot so-r11':
+                //     console.log("LIVE Deploying '!bot so-r11'")
+                //     message.reply("LIVE Deploying '!bot so-r11'")
+
+                //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                //         var payload = ``
+                //         var memberId = member.id
+                //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                //         const round = 11
+                //         var replyString
+                //         var currentState
+                //         var outcomes = {
+                //             outcomes: [
+                //                 {"range": [1, 5], "result": -3, "status": "SCORCHED", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel the flames lick your feet and sweat pour down your back [SCORCHED][-3hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                //                 {"range": [6, 6], "result": -5, "status": "SEVERE BURNS", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel your boots beginning to melt and your hair begin to smoke [SEVERE BURNS][-5hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                //             ]
+                //         }
+                //         // console.log(participants[memberId])
+                //         if (!!participants[memberId] || participants[memberId] == 0){
+                            
+                //             console.log("Exists -- "+member.displayName)
+                //             // This checks if the player has existence in this round (i.e. not dead from a previous round)
+                //             if(results.players[participants[memberId]].history.length >= round){
+                //                 currentState = results.players[participants[memberId]].history[round - 1]
+                //                 // console.log(currentState)
+                //                 // console.log(currentState.health+`\n`)
+                //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                //                 var health = currentState.health
+                //                 var status = ''
+                                
+                                
+                //                 outcomes.outcomes.forEach((outcome)=>{
+                //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                //                         status = outcome.status
+                //                         if(currentState.alive == false){
+                //                             status = "DEAD"
+                //                         }
+                                        
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                //                         if(currentState.alive == true){
+
+                //                             if( currentState.item == "pencil") {
+                //                                 payload += `\n> You have a Golden Pencil!`
+                //                             }
+    
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+    
+                //                             payload += outcome.message
+    
+                //                             if(currentState.poisoned == true){
+                //                                 payload += `\n\n*For a moment, you see doubles of everything in the room...* [Poisoned][-1hp]`
+                //                             }
+    
+                //                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                //                         } else if(currentState.alive == false){
+
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+    
+                //                             payload += outcome.message
+
+                //                             payload += `\n\nBefore you can react, your knees give way under you. Your head spins, your vision fades... The injuries you've experienced have finally taken their toll...`
+    
+                //                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
+
+                //                         }
+
+                //                     }
+                //                     else if(currentState.rollResult == "lowest"){
+                //                         status = "DEAD"
+
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                //                         payload += `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor, faster than you can keep up. Your injuries so far have slowed you down, and your officer friend doesn’t seem to hear you call for help through the acrid smoke. \n\nYou watch in horror and helplessness as he disappears ahead in a swirl of flames, your boots searing your feet as they melt into the ground. You can feel your whole body burning with a searing heat, and you know it’s too late for you… [Instant Death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
+                //                     }
+
+                //                 })
+                                
+                //                 // Send payload
+                //                 member.send(payload)
+                //                 message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                //             } else {
+                //                 // Alternative response if player has died previously.
+                //                 message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                //             }
+                //         } else {
+                //             console.log("FAILED -- "+member.displayName)
+                //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                //         }
+                //     })
+
+                //     message.reply("LIVE Deploy complete!")
+
+                //     break
+
+                case '!bot test so-r12':
+                    console.log("TEST Deploying '!bot so-r12'")
+                    message.reply("TEST Deploying '!bot so-r12'")
 
                     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                         var payload = ``
                         var memberId = member.id
                         // CHANGE THE ROUND EVERY ROUND PLEASE.
-                        const round = 11
+                        const round = 12
                         var replyString
                         var currentState
                         var outcomes = {
                             outcomes: [
-                                {"range": [1, 5], "result": -3, "status": "SCORCHED", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel the flames lick your feet and sweat pour down your back [SCORCHED][-3hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
-                                {"range": [6, 6], "result": -5, "status": "SEVERE BURNS", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel your boots beginning to melt and your hair begin to smoke [SEVERE BURNS][-5hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                                {"range": [1, 6], "result": -2, "status": "OW!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. However, your officer friend is well trained, and you apparently just have a great deal of luck (if you could count this situation as lucky). You get a little battered and bruised [BATTERED][-2hp], but neither of you are going to die now after all that. The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
+                                {"range": [7, 15], "result": -3, "status": "OUCH!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][-3hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
+                                {"range": [16, 20], "result": -5, "status": "NGH!!!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are running out of luck. You manage to take down two pirates before pain explodes behind your eyes and the world goes white [KING HIT][-5hp]. You’re not quite sure what happened after that, but when everything comes back into focus, your officer friend is there helping you to your feet. The remaining pirates seem to have surrendered, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well… `},
                             ]
                         }
                         // console.log(participants[memberId])
                         if (!!participants[memberId] || participants[memberId] == 0){
+                        // if (participants[memberId] == 21){
                             
                             console.log("Exists -- "+member.displayName)
                             if(results.players[participants[memberId]].history.length >= round){
@@ -1359,7 +1553,7 @@ app.listen(3000, () => {
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*For a moment, you see doubles of everything in the room...* [Poisoned][-1hp]`
+                                                payload += `\n\n*You notice your hands trembling uncontrollably* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
@@ -1367,22 +1561,25 @@ app.listen(3000, () => {
                                         } else if(currentState.alive == false){
 
                                             payload += `\n\n--------\n\nUPDATE: \n`
-    
-                                            payload += outcome.message
+                                            
+                                            // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
+                                            if (currentState.health - outcome.result == outcome.result){
+                                                payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`hp]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone…`
+                                            } else {
+                                                payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][`+outcome.result+`hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain.\n\nJust as the captain is about to thank you, you lurch forward and throw up [Poisoned][-1hp]. You try to bring yourself up but your insides give and you throw up once more. Your vision loses all focus and you collapse to the ground. The room feels cold. You roll to your side and embrace yourself... You close your eyes to the now muffled concerned clamours of the people around you... You stop breathing.`
+                                            }
 
-                                            payload += `\n\nBefore you can react, your knees give way under you. Your head spins, your vision fades... The injuries you've experienced have finally taken their toll...`
-    
                                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
 
                                         }
 
                                     }
                                     else if(currentState.rollResult == "lowest"){
-                                        status = "DEAD"
+                                        // status = "DEAD"
 
-                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+                                        // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
-                                        payload += `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor, faster than you can keep up. Your injuries so far have slowed you down, and your officer friend doesn’t seem to hear you call for help through the acrid smoke. \n\nYou watch in horror and helplessness as he disappears ahead in a swirl of flames, your boots searing your feet as they melt into the ground. You can feel your whole body burning with a searing heat, and you know it’s too late for you… [Instant Death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
+                                        // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
                                     }
 
                                 })
@@ -1403,29 +1600,29 @@ app.listen(3000, () => {
 
                     break
 
-                case '!bot so-r11':
-                    console.log("LIVE Deploying '!bot so-r11'")
-                    message.reply("LIVE Deploying '!bot so-r11'")
+                case '!bot so-r12':
+                    console.log("LIVE Deploying '!bot so-r12'")
+                    message.reply("LIVE Deploying '!bot so-r12'")
 
                     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                         var payload = ``
                         var memberId = member.id
                         // CHANGE THE ROUND EVERY ROUND PLEASE.
-                        const round = 11
+                        const round = 12
                         var replyString
                         var currentState
                         var outcomes = {
                             outcomes: [
-                                {"range": [1, 5], "result": -3, "status": "SCORCHED", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel the flames lick your feet and sweat pour down your back [SCORCHED][-3hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
-                                {"range": [6, 6], "result": -5, "status": "SEVERE BURNS", "message": `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor. You can feel your boots beginning to melt and your hair begin to smoke [SEVERE BURNS][-5hp], but you somehow manage to stay just ahead of the blaze. Once you make it out of the corridor, you throw yourselves into the next unlocked room you could find, and seal the door shut behind you, leaving the fiery explosion to blow past without any more incident.\n\nHowever, the room you find yourselves in happens to be the Communications Room. While the rest of the ship is plunged in darkness, this room alone is lit with an array of screens, buttons and flashing wires. At the front of the room is what remains of the ship’s staff, kneeling with their hands behind their heads on the floor. Opposite them, with firearms raised, are a jeering crew of pirates...`},
+                                {"range": [1, 6], "result": -2, "status": "OW!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. However, your officer friend is well trained, and you apparently just have a great deal of luck (if you could count this situation as lucky). You get a little battered and bruised [BATTERED][-2hp], but neither of you are going to die now after all that. The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
+                                {"range": [7, 15], "result": -3, "status": "OUCH!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][-3hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
+                                {"range": [16, 20], "result": -5, "status": "NGH!!!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are running out of luck. You manage to take down two pirates before pain explodes behind your eyes and the world goes white [KING HIT][-5hp]. You’re not quite sure what happened after that, but when everything comes back into focus, your officer friend is there helping you to your feet. The remaining pirates seem to have surrendered, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well… `},
                             ]
                         }
                         // console.log(participants[memberId])
                         if (!!participants[memberId] || participants[memberId] == 0){
                             
                             console.log("Exists -- "+member.displayName)
-                            // This checks if the player has existence in this round (i.e. not dead from a previous round)
                             if(results.players[participants[memberId]].history.length >= round){
                                 currentState = results.players[participants[memberId]].history[round - 1]
                                 // console.log(currentState)
@@ -1433,7 +1630,7 @@ app.listen(3000, () => {
                                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
                                 var health = currentState.health
                                 var status = ''
-                                
+
                                 
                                 outcomes.outcomes.forEach((outcome)=>{
                                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
@@ -1455,7 +1652,7 @@ app.listen(3000, () => {
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*For a moment, you see doubles of everything in the room...* [Poisoned][-1hp]`
+                                                payload += `\n\n*You notice your hands trembling uncontrollably* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
@@ -1463,32 +1660,34 @@ app.listen(3000, () => {
                                         } else if(currentState.alive == false){
 
                                             payload += `\n\n--------\n\nUPDATE: \n`
-    
-                                            payload += outcome.message
+                                            
+                                            // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
+                                            if (currentState.health - outcome.result == outcome.result){
+                                                payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`hp]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone…`
+                                            } else {
+                                                payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][`+outcome.result+`hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain.\n\nJust as the captain is about to thank you, you lurch forward and throw up [Poisoned][-1hp]. You try to bring yourself up but your insides give and you throw up once more. Your vision loses all focus and you collapse to the ground. The room feels cold. You roll to your side and embrace yourself... You close your eyes to the now muffled concerned clamours of the people around you... You stop breathing.`
+                                            }
 
-                                            payload += `\n\nBefore you can react, your knees give way under you. Your head spins, your vision fades... The injuries you've experienced have finally taken their toll...`
-    
                                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
 
                                         }
 
                                     }
                                     else if(currentState.rollResult == "lowest"){
-                                        status = "DEAD"
+                                        // status = "DEAD"
 
-                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+                                        // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
-                                        payload += `The Lower Deck lights up in a matter of seconds. You and the officer bolt for the exit as the room becomes engulfed in flames. The wall of fire chases you through the exit, and out into the corridor, faster than you can keep up. Your injuries so far have slowed you down, and your officer friend doesn’t seem to hear you call for help through the acrid smoke. \n\nYou watch in horror and helplessness as he disappears ahead in a swirl of flames, your boots searing your feet as they melt into the ground. You can feel your whole body burning with a searing heat, and you know it’s too late for you… [Instant Death][-25hp]\n\n\n\n*Game over! Better luck next time!*\`\`\``
+                                        // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
                                     }
 
                                 })
                                 
                                 // Send payload
-                                member.send(payload)
-                                message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                                // member.send(payload)
+                                message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
                             } else {
-                                // Alternative response if player has died previously.
-                                message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                                message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
                             }
                         } else {
                             console.log("FAILED -- "+member.displayName)
