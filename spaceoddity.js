@@ -1500,24 +1500,232 @@ app.listen(3000, () => {
 
                 //     break
 
-                case '!bot test so-r12':
-                    console.log("TEST Deploying '!bot so-r12'")
-                    message.reply("TEST Deploying '!bot so-r12'")
+                // case '!bot test so-r12':
+                //     console.log("TEST Deploying '!bot so-r12'")
+                //     message.reply("TEST Deploying '!bot so-r12'")
+
+                //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                //         var payload = ``
+                //         var memberId = member.id
+                //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                //         const round = 12
+                //         var replyString
+                //         var currentState
+                //         var previousState
+                //         var outcomes = {
+                //             outcomes: [
+                //                 {"range": [1, 6], "result": -2, "status": "OW!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. However, your officer friend is well trained, and you apparently just have a great deal of luck (if you could count this situation as lucky). You get a little battered and bruised [BATTERED][-2hp], but neither of you are going to die now after all that. The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
+                //                 {"range": [7, 15], "result": -3, "status": "OUCH!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][-3hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
+                //                 {"range": [16, 20], "result": -5, "status": "NGH!!!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are running out of luck. You manage to take down two pirates before pain explodes behind your eyes and the world goes white [KING HIT][-5hp]. You’re not quite sure what happened after that, but when everything comes back into focus, your officer friend is there helping you to your feet. The remaining pirates seem to have surrendered, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well… `},
+                //             ]
+                //         }
+                //         // console.log(participants[memberId])
+                //         if (!!participants[memberId] || participants[memberId] == 0){
+                //         // if (participants[memberId] == 21){
+                            
+                //             console.log("Exists -- "+member.displayName)
+                //             if(results.players[participants[memberId]].history.length >= round){
+                //                 currentState = results.players[participants[memberId]].history[round - 1]
+                //                 previousState = results.players[participants[memberId]].history[round - 2]
+                //                 // console.log(currentState)
+                //                 // console.log(currentState.health+`\n`)
+                //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                //                 var health = currentState.health
+                //                 var status = ''
+
+                                
+                //                 outcomes.outcomes.forEach((outcome)=>{
+                //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                //                         status = outcome.status
+                //                         if(currentState.alive == false){
+                //                             status = "DEAD"
+                //                         }
+                                        
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                //                         if(currentState.alive == true){
+
+                //                             if( currentState.item == "pencil") {
+                //                                 payload += `\n> You have a Golden Pencil!`
+                //                             }
+    
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+    
+                //                             payload += outcome.message
+    
+                //                             if(currentState.poisoned == true){
+                //                                 payload += `\n\n*You notice your hands trembling uncontrollably* [Poisoned][-1hp]`
+                //                             }
+    
+                //                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                //                         } else if(currentState.alive == false){
+
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+                                            
+                //                             // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
+                //                             if (previousState.health - Math.abs(outcome.result) <= 0){
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to roll")
+                //                                 payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain too [Shot][`+outcome.result+`hp]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone…`
+                //                             } else {
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to poison")
+                //                                 payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][`+outcome.result+`hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain.\n\nJust as the captain is about to thank you, you lurch forward and throw up [Poisoned][-1hp]. You try to bring yourself up but your insides give and you throw up once more. Your vision loses all focus and you collapse to the ground. The room feels cold. You roll to your side and embrace yourself... You close your eyes to the now muffled concerned clamouring of the people around you... You stop breathing.`
+                //                             }
+
+                //                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
+
+                //                         }
+
+                //                     }
+                //                     else if(currentState.rollResult == "lowest"){
+                //                         // status = "DEAD"
+
+                //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                //                         // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
+                //                     }
+
+                //                 })
+                                
+                //                 // Send payload
+                //                 // member.send(payload)
+                //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                //             } else {
+                //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                //             }
+                //         } else {
+                //             console.log("FAILED -- "+member.displayName)
+                //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                //         }
+                //     })
+
+                //     message.reply("Test complete!")
+
+                //     break
+
+                // case '!bot so-r12':
+                //     console.log("LIVE Deploying '!bot so-r12'")
+                //     message.reply("LIVE Deploying '!bot so-r12'")
+
+                //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                //         var payload = ``
+                //         var memberId = member.id
+                //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                //         const round = 12
+                //         var replyString
+                //         var currentState
+                //         var previousState
+                //         var outcomes = {
+                //             outcomes: [
+                //                 {"range": [1, 6], "result": -2, "status": "OW!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. However, your officer friend is well trained, and you apparently just have a great deal of luck (if you could count this situation as lucky). You get a little battered and bruised [BATTERED][-2hp], but neither of you are going to die now after all that. The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
+                //                 {"range": [7, 15], "result": -3, "status": "OUCH!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][-3hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
+                //                 {"range": [16, 20], "result": -5, "status": "NGH!!!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are running out of luck. You manage to take down two pirates before pain explodes behind your eyes and the world goes white [KING HIT][-5hp]. You’re not quite sure what happened after that, but when everything comes back into focus, your officer friend is there helping you to your feet. The remaining pirates seem to have surrendered, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well… `},
+                //             ]
+                //         }
+                //         // console.log(participants[memberId])
+                //         if (!!participants[memberId] || participants[memberId] == 0){
+                            
+                //             console.log("Exists -- "+member.displayName)
+                //             if(results.players[participants[memberId]].history.length >= round){
+                //                 currentState = results.players[participants[memberId]].history[round - 1]
+                //                 previousState = results.players[participants[memberId]].history[round - 2]
+                //                 // console.log(currentState)
+                //                 // console.log(currentState.health+`\n`)
+                //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                //                 var health = currentState.health
+                //                 var status = ''
+
+                                
+                //                 outcomes.outcomes.forEach((outcome)=>{
+                //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                //                         status = outcome.status
+                //                         if(currentState.alive == false){
+                //                             status = "DEAD"
+                //                         }
+                                        
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                //                         if(currentState.alive == true){
+
+                //                             if( currentState.item == "pencil") {
+                //                                 payload += `\n> You have a Golden Pencil!`
+                //                             }
+    
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+    
+                //                             payload += outcome.message
+    
+                //                             if(currentState.poisoned == true){
+                //                                 payload += `\n\n*You notice your hands trembling uncontrollably* [Poisoned][-1hp]`
+                //                             }
+    
+                //                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                //                         } else if(currentState.alive == false){
+
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+                                            
+                //                             // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
+                //                             if (previousState.health - Math.abs(outcome.result) <= 0){
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to roll")
+                //                                 payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain too [Shot][`+outcome.result+`hp]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone…`
+                //                             } else {
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to poison")
+                //                                 payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][`+outcome.result+`hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain.\n\nJust as the captain is about to thank you, you lurch forward and throw up [Poisoned][-1hp]. You try to bring yourself up but your insides give and you throw up once more. Your vision loses all focus and you collapse to the ground. The room feels cold. You roll to your side and embrace yourself... You close your eyes to the now muffled concerned clamouring of the people around you... You stop breathing.`
+                //                             }
+
+                //                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
+
+                //                         }
+
+                //                     }
+                //                     else if(currentState.rollResult == "lowest"){
+                //                         // status = "DEAD"
+
+                //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                //                         // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
+                //                     }
+
+                //                 })
+                                
+                //                 // Send payload
+                //                 member.send(payload)
+                //                 message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                //             } else {
+                //                 // Alternative response if player has died previously.
+                //                 message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                //             }
+                //         } else {
+                //             console.log("FAILED -- "+member.displayName)
+                //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                //         }
+                //     })
+
+                //     message.reply("LIVE Deploy complete!")
+
+                //     break
+
+                
+                case '!bot test so-r13':
+                    console.log("TEST Deploying '!bot so-r13'")
+                    message.reply("TEST Deploying '!bot so-r13'")
 
                     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                         var payload = ``
                         var memberId = member.id
                         // CHANGE THE ROUND EVERY ROUND PLEASE.
-                        const round = 12
+                        const round = 13
                         var replyString
                         var currentState
                         var previousState
                         var outcomes = {
                             outcomes: [
-                                {"range": [1, 6], "result": -2, "status": "OW!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. However, your officer friend is well trained, and you apparently just have a great deal of luck (if you could count this situation as lucky). You get a little battered and bruised [BATTERED][-2hp], but neither of you are going to die now after all that. The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
-                                {"range": [7, 15], "result": -3, "status": "OUCH!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][-3hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
-                                {"range": [16, 20], "result": -5, "status": "NGH!!!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are running out of luck. You manage to take down two pirates before pain explodes behind your eyes and the world goes white [KING HIT][-5hp]. You’re not quite sure what happened after that, but when everything comes back into focus, your officer friend is there helping you to your feet. The remaining pirates seem to have surrendered, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well… `},
+                                {"range": [4, 6], "result": -4, "status": "BLEEDING OUT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing…`},
+                                {"range": [3, 3], "result": -10, "status": "CRITICAL HIT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the base of your neck [SAVAGED][-10hp] You think you’d be dead, but somehow you still manage to scream. The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken and bleeding profusely, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `},
                             ]
                         }
                         // console.log(participants[memberId])
@@ -1555,7 +1763,7 @@ app.listen(3000, () => {
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*You notice your hands trembling uncontrollably* [Poisoned][-1hp]`
+                                                payload += `\n\n*Your wounds feel like they're on fire...* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
@@ -1567,10 +1775,19 @@ app.listen(3000, () => {
                                             // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
                                             if (previousState.health - Math.abs(outcome.result) <= 0){
                                                 console.log(member.displayName+" "+participants[memberId]+" Died to roll")
-                                                payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain too [Shot][`+outcome.result+`hp]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone…`
+                                                console.log(previousState.health - Math.abs(outcome.result))
+                                                if(outcome.result == -4){
+                                                    payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but it is too late for you. Your savaged arm begins burning with incredible pain, as the alien’s acidic saliva seems to eat away your skin and bones! You scream and scream, but there is nothing you nor your officer friend can do. You are faintly aware of his shouting words, and of yourself being lowered to the ground, but soon your entire vision turns red, and you slip away into unconsciousness...`
+                                                }
+                                                else if(outcome.result == -10){
+                                                    payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out...`
+                                                }
                                             } else {
-                                                console.log(member.displayName+" "+participants[memberId]+" Died to poison")
-                                                payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][`+outcome.result+`hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain.\n\nJust as the captain is about to thank you, you lurch forward and throw up [Poisoned][-1hp]. You try to bring yourself up but your insides give and you throw up once more. Your vision loses all focus and you collapse to the ground. The room feels cold. You roll to your side and embrace yourself... You close your eyes to the now muffled concerned clamouring of the people around you... You stop breathing.`
+                                                console.log(member.displayName+" "+participants[memberId]+" Died to poison. Their previous health was: "+previousState.health)
+                                                console.log(previousState.health - Math.abs(outcome.result))
+                                                if(outcome.result == -4){
+                                                    payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing—but as you move to do so, you are wracked with a sudden cold tremor. You cough up hard into your hands and see green slime coating your fingers [POISONED][-1hp] You try to tell the officer, but are overcome with another violent coughing fit and fall to your knees. More green slime splashes onto the floor as your insides seem to squeeze uncontrollably inside of you. The last thing you see before you black out are the boots of your officer friend, running to save you… `
+                                                }
                                             }
 
                                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
@@ -1584,6 +1801,18 @@ app.listen(3000, () => {
                                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
                                         // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
+                                    } else if(currentState.rollResult == "SAVED"){
+                                        status = "RESURRECTED"
+
+                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
+
+                                        payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
+
+                                        if(currentState.poisoned == true){
+                                            payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
+                                        }
+
+                                        payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                     }
 
                                 })
@@ -1604,24 +1833,23 @@ app.listen(3000, () => {
 
                     break
 
-                case '!bot so-r12':
-                    console.log("LIVE Deploying '!bot so-r12'")
-                    message.reply("LIVE Deploying '!bot so-r12'")
+                case '!bot so-r13':
+                    console.log("LIVE Deploying '!bot so-r13'")
+                    message.reply("LIVE Deploying '!bot so-r13'")
 
                     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                         var payload = ``
                         var memberId = member.id
                         // CHANGE THE ROUND EVERY ROUND PLEASE.
-                        const round = 12
+                        const round = 13
                         var replyString
                         var currentState
                         var previousState
                         var outcomes = {
                             outcomes: [
-                                {"range": [1, 6], "result": -2, "status": "OW!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. However, your officer friend is well trained, and you apparently just have a great deal of luck (if you could count this situation as lucky). You get a little battered and bruised [BATTERED][-2hp], but neither of you are going to die now after all that. The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
-                                {"range": [7, 15], "result": -3, "status": "OUCH!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][-3hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well…`},
-                                {"range": [16, 20], "result": -5, "status": "NGH!!!", "message": `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are running out of luck. You manage to take down two pirates before pain explodes behind your eyes and the world goes white [KING HIT][-5hp]. You’re not quite sure what happened after that, but when everything comes back into focus, your officer friend is there helping you to your feet. The remaining pirates seem to have surrendered, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain. \n\nThe captain, normally a calm man, nervously expresses his gratitude for your help. He stutters through his explanation of how he was trying to land the ship on the closest planet before the pirates had attacked. Huh. Strange. You had never known him to stutter before. He continues to give shrill instructions on what to do and how to disembark once the ship has landed. You give your officer friend a side glance, and know he is suspicious as well… `},
+                                {"range": [4, 6], "result": -4, "status": "BLEEDING OUT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing…`},
+                                {"range": [3, 3], "result": -10, "status": "CRITICAL HIT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the base of your neck [SAVAGED][-10hp] You think you’d be dead, but somehow you still manage to scream. The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken and bleeding profusely, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `},
                             ]
                         }
                         // console.log(participants[memberId])
@@ -1658,7 +1886,7 @@ app.listen(3000, () => {
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*You notice your hands trembling uncontrollably* [Poisoned][-1hp]`
+                                                payload += `\n\n*Your wounds feel like they're on fire...* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
@@ -1670,10 +1898,19 @@ app.listen(3000, () => {
                                             // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
                                             if (previousState.health - Math.abs(outcome.result) <= 0){
                                                 console.log(member.displayName+" "+participants[memberId]+" Died to roll")
-                                                payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain too [Shot][`+outcome.result+`hp]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone…`
+                                                console.log(previousState.health - Math.abs(outcome.result))
+                                                if(outcome.result == -4){
+                                                    payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but it is too late for you. Your savaged arm begins burning with incredible pain, as the alien’s acidic saliva seems to eat away your skin and bones! You scream and scream, but there is nothing you nor your officer friend can do. You are faintly aware of his shouting words, and of yourself being lowered to the ground, but soon your entire vision turns red, and you slip away into unconsciousness...`
+                                                }
+                                                else if(outcome.result == -10){
+                                                    payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out...`
+                                                }
                                             } else {
-                                                console.log(member.displayName+" "+participants[memberId]+" Died to poison")
-                                                payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. You exchange exasperated glances with your friend. Here you go again… Both you and your officer do the best you can against the pirates, but it is not without injury. Your officer friend is well trained, but you are beginning to run out of luck. You manage to take down two pirates before the third knocks you to the ground [ROLLED ANKLE][`+outcome.result+`hp]. It is only with the quick reflexes of your officer friend, spinning around and shooting him swiftly, that you survive.The remaining pirates surrender, and hand over their weapons. The ship’s staff are freed, along with the ship’s captain.\n\nJust as the captain is about to thank you, you lurch forward and throw up [Poisoned][-1hp]. You try to bring yourself up but your insides give and you throw up once more. Your vision loses all focus and you collapse to the ground. The room feels cold. You roll to your side and embrace yourself... You close your eyes to the now muffled concerned clamouring of the people around you... You stop breathing.`
+                                                console.log(member.displayName+" "+participants[memberId]+" Died to poison. Their previous health was: "+previousState.health)
+                                                console.log(previousState.health - Math.abs(outcome.result))
+                                                if(outcome.result == -4){
+                                                    payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing—but as you move to do so, you are wracked with a sudden cold tremor. You cough up hard into your hands and see green slime coating your fingers [POISONED][-1hp] You try to tell the officer, but are overcome with another violent coughing fit and fall to your knees. More green slime splashes onto the floor as your insides seem to squeeze uncontrollably inside of you. The last thing you see before you black out are the boots of your officer friend, running to save you… `
+                                                }
                                             }
 
                                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
@@ -1687,6 +1924,18 @@ app.listen(3000, () => {
                                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
                                         // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
+                                    } else if(currentState.rollResult == "SAVED"){
+                                        status = "RESURRECTED"
+
+                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
+
+                                        payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
+
+                                        if(currentState.poisoned == true){
+                                            payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
+                                        }
+
+                                        payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                     }
 
                                 })
