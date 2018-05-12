@@ -78,6 +78,16 @@ app.listen(3000, () => {
                         message.react('👌')
                         break
 
+                    case '!test delete':
+                        console.log("deleting last DM")
+                        message.author.createDM().then((channel)=>{
+                            channel.fetchMessages({limit:1}).then((messages)=>{
+                                messages.deleteAll()
+                                message.react('👌')
+                            })
+                        })
+                        break
+
                     case '!bot post channel intro':
                         client.channels.get(spaceoddityChannel).send(
                             `@Space Oddity\n\`The year is 2128, a year of great technological excitement and upheaval in the middle of the Greatest Space Age known to man. Continued environmental decline has forced humanity to embark on brave crusades off-world in search for greener pastures… including yourself. \n\nHumankind’s reach now expands across Solar Systems and has made contact with other civilisations, forming the Intergalactic Alliance. Armed with pencils, artefacts thought to channel a mystical force, we mark our new place in the galaxy. \n\nWhat awaits you in this world?\``
@@ -1709,23 +1719,272 @@ app.listen(3000, () => {
                 //     break
 
                 
-                case '!bot test so-r13':
-                    console.log("TEST Deploying '!bot so-r13'")
-                    message.reply("TEST Deploying '!bot so-r13'")
+                // case '!bot test so-r13':
+                //     console.log("TEST Deploying '!bot so-r13'")
+                //     message.reply("TEST Deploying '!bot so-r13'")
+
+                //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                //         var payload = ``
+                //         var memberId = member.id
+                //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                //         const round = 13
+                //         var replyString
+                //         var currentState
+                //         var previousState
+                //         var outcomes = {
+                //             outcomes: [
+                //                 {"range": [4, 6], "result": -4, "status": "BLEEDING OUT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing…`},
+                //                 {"range": [3, 3], "result": -10, "status": "CRITICAL HIT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the base of your neck [SAVAGED][-10hp] You think you’d be dead, but somehow you still manage to scream. The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken and bleeding profusely, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `},
+                //             ]
+                //         }
+                //         // console.log(participants[memberId])
+                //         if (!!participants[memberId] || participants[memberId] == 0){
+                //         // if (participants[memberId] == 21){
+                            
+                //             console.log("Exists -- "+member.displayName)
+                //             if(results.players[participants[memberId]].history.length >= round){
+                //                 currentState = results.players[participants[memberId]].history[round - 1]
+                //                 previousState = results.players[participants[memberId]].history[round - 2]
+                //                 // console.log(currentState)
+                //                 // console.log(currentState.health+`\n`)
+                //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                //                 var health = currentState.health
+                //                 var status = ''
+
+                                
+                //                 outcomes.outcomes.forEach((outcome)=>{
+                //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                //                         status = outcome.status
+                //                         if(currentState.alive == false){
+                //                             status = "DEAD"
+                //                         }
+                                        
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                //                         if(currentState.alive == true){
+
+                //                             if( currentState.item == "pencil") {
+                //                                 payload += `\n> You have a Golden Pencil!`
+                //                             }
+    
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+    
+                //                             payload += outcome.message
+    
+                //                             if(currentState.poisoned == true){
+                //                                 payload += `\n\n*Your wounds feel like they're on fire...* [Poisoned][-1hp]`
+                //                             }
+    
+                //                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                //                         } else if(currentState.alive == false){
+
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+                                            
+                //                             // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
+                //                             if (previousState.health - Math.abs(outcome.result) <= 0){
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to roll")
+                //                                 console.log(previousState.health - Math.abs(outcome.result))
+                //                                 if(outcome.result == -4){
+                //                                     payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but it is too late for you. Your savaged arm begins burning with incredible pain, as the alien’s acidic saliva seems to eat away your skin and bones! You scream and scream, but there is nothing you nor your officer friend can do. You are faintly aware of his shouting words, and of yourself being lowered to the ground, but soon your entire vision turns red, and you slip away into unconsciousness...`
+                //                                 }
+                //                                 else if(outcome.result == -10){
+                //                                     payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out...`
+                //                                 }
+                //                             } else {
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to poison. Their previous health was: "+previousState.health)
+                //                                 console.log(previousState.health - Math.abs(outcome.result))
+                //                                 if(outcome.result == -4){
+                //                                     payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing—but as you move to do so, you are wracked with a sudden cold tremor. You cough up hard into your hands and see green slime coating your fingers [POISONED][-1hp] You try to tell the officer, but are overcome with another violent coughing fit and fall to your knees. More green slime splashes onto the floor as your insides seem to squeeze uncontrollably inside of you. The last thing you see before you black out are the boots of your officer friend, running to save you… `
+                //                                 }
+                //                             }
+
+                //                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
+
+                //                         }
+
+                //                     }
+                //                     else if(currentState.rollResult == "lowest"){
+                //                         // status = "DEAD"
+
+                //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                //                         // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
+                //                     } else if(currentState.rollResult == "SAVED"){
+                //                         status = "RESURRECTED"
+
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
+
+                //                         payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
+
+                //                         if(currentState.poisoned == true){
+                //                             payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
+                //                         }
+
+                //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                //                     }
+
+                //                 })
+                                
+                //                 // Send payload
+                //                 // member.send(payload)
+                //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                //             } else {
+                //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                //             }
+                //         } else {
+                //             console.log("FAILED -- "+member.displayName)
+                //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                //         }
+                //     })
+
+                //     message.reply("Test complete!")
+
+                //     break
+
+                // case '!bot so-r13':
+                //     console.log("LIVE Deploying '!bot so-r13'")
+                //     message.reply("LIVE Deploying '!bot so-r13'")
+
+                //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                //         var payload = ``
+                //         var memberId = member.id
+                //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                //         const round = 13
+                //         var replyString
+                //         var currentState
+                //         var previousState
+                //         var outcomes = {
+                //             outcomes: [
+                //                 {"range": [4, 6], "result": -4, "status": "BLEEDING OUT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing…`},
+                //                 {"range": [3, 3], "result": -10, "status": "CRITICAL HIT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the base of your neck [SAVAGED][-10hp] You think you’d be dead, but somehow you still manage to scream. The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken and bleeding profusely, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `},
+                //             ]
+                //         }
+                //         // console.log(participants[memberId])
+                //         if (!!participants[memberId] || participants[memberId] == 0){
+                            
+                //             console.log("Exists -- "+member.displayName)
+                //             if(results.players[participants[memberId]].history.length >= round){
+                //                 currentState = results.players[participants[memberId]].history[round - 1]
+                //                 previousState = results.players[participants[memberId]].history[round - 2]
+                //                 // console.log(currentState)
+                //                 // console.log(currentState.health+`\n`)
+                //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                //                 var health = currentState.health
+                //                 var status = ''
+
+                                
+                //                 outcomes.outcomes.forEach((outcome)=>{
+                //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                //                         status = outcome.status
+                //                         if(currentState.alive == false){
+                //                             status = "DEAD"
+                //                         }
+                                        
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                //                         if(currentState.alive == true){
+
+                //                             if( currentState.item == "pencil") {
+                //                                 payload += `\n> You have a Golden Pencil!`
+                //                             }
+    
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+    
+                //                             payload += outcome.message
+    
+                //                             if(currentState.poisoned == true){
+                //                                 payload += `\n\n*Your wounds feel like they're on fire...* [Poisoned][-1hp]`
+                //                             }
+    
+                //                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                //                         } else if(currentState.alive == false){
+
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+                                            
+                //                             // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
+                //                             if (previousState.health - Math.abs(outcome.result) <= 0){
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to roll")
+                //                                 console.log(previousState.health - Math.abs(outcome.result))
+                //                                 if(outcome.result == -4){
+                //                                     payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but it is too late for you. Your savaged arm begins burning with incredible pain, as the alien’s acidic saliva seems to eat away your skin and bones! You scream and scream, but there is nothing you nor your officer friend can do. You are faintly aware of his shouting words, and of yourself being lowered to the ground, but soon your entire vision turns red, and you slip away into unconsciousness...`
+                //                                 }
+                //                                 else if(outcome.result == -10){
+                //                                     payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out...`
+                //                                 }
+                //                             } else {
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to poison. Their previous health was: "+previousState.health)
+                //                                 console.log(previousState.health - Math.abs(outcome.result))
+                //                                 if(outcome.result == -4){
+                //                                     payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing—but as you move to do so, you are wracked with a sudden cold tremor. You cough up hard into your hands and see green slime coating your fingers [POISONED][-1hp] You try to tell the officer, but are overcome with another violent coughing fit and fall to your knees. More green slime splashes onto the floor as your insides seem to squeeze uncontrollably inside of you. The last thing you see before you black out are the boots of your officer friend, running to save you… `
+                //                                 }
+                //                             }
+
+                //                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
+
+                //                         }
+
+                //                     }
+                //                     else if(currentState.rollResult == "lowest"){
+                //                         // status = "DEAD"
+
+                //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                //                         // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
+                //                     } else if(currentState.rollResult == "SAVED"){
+                //                         status = "RESURRECTED"
+
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
+
+                //                         payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
+
+                //                         if(currentState.poisoned == true){
+                //                             payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
+                //                         }
+
+                //                         payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                //                     }
+
+                //                 })
+                                
+                //                 // Send payload
+                //                 member.send(payload)
+                //                 message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                //             } else {
+                //                 // Alternative response if player has died previously.
+                //                 message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                //             }
+                //         } else {
+                //             console.log("FAILED -- "+member.displayName)
+                //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                //         }
+                //     })
+
+                //     message.reply("LIVE Deploy complete!")
+
+                //     break
+
+                case '!bot test so-r14':
+                    console.log("TEST Deploying '!bot so-r14'")
+                    message.reply("TEST Deploying '!bot so-r14'")
 
                     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                         var payload = ``
                         var memberId = member.id
                         // CHANGE THE ROUND EVERY ROUND PLEASE.
-                        const round = 13
+                        const round = 14
                         var replyString
                         var currentState
                         var previousState
                         var outcomes = {
                             outcomes: [
-                                {"range": [4, 6], "result": -4, "status": "BLEEDING OUT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing…`},
-                                {"range": [3, 3], "result": -10, "status": "CRITICAL HIT", "message": `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the base of your neck [SAVAGED][-10hp] You think you’d be dead, but somehow you still manage to scream. The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken and bleeding profusely, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `},
+                                {"range": [1, 6], "result": 0, "status": "PLAYED IT COOL", "message": `You brace yourself for impact! The ship lands violently on foreign soil. People, furniture, and aliens alike go flying across the room as the ship bounces once, then twice, before sliding to a jerky halt. You manage to hold on tight enough to emerge out of the landing virtually unscathed. Whew! Your officer friend staggers to his feet, before helping you up as well. “Let’s leave this cursed ship.”\n\nYou follow him out of the Communications Room and into the deserted corridor. If there were any other survivors aboard, you doubt there are many left now, if at all. Bruised and exhausted, you stumble behind your companion. He seems to know his way through the ship, and leads you through several rooms and corridors, all of which are in varying stages of carnage. Despite his injuries, he moves with ease. As you cross the common room of the ship, you cough violently into the helmet of your space suit… `},
+                                {"range": [7, 15], "result": -2, "status": "TOOK A TUMBLE", "message": `You brace yourself for impact! The ship lands violently on foreign soil. People, furniture, and aliens alike go flying across the room as the ship bounces once, then twice, before sliding to a jerky halt. You try to hold on, but lose your grip at the last second, and make a rough tumble across the room [TUMBLED][-2hp]. Your officer friend staggers to his feet, before helping you up as well. “Let’s leave this cursed ship.”\n\nYou follow him out of the Communications Room and into the deserted corridor. If there were any other survivors aboard, you doubt there are many left now, if at all. Bruised and exhausted, you stumble behind your companion. He seems to know his way through the ship, and leads you through several rooms and corridors, all of which are in varying stages of carnage. Despite his injuries, he moves with ease. As you cross the common room of the ship, you cough violently into the helmet of your space suit… `},
+                                {"range": [16, 20], "result": -5, "status": "SENT FLYING", "message": `You brace yourself for impact! The ship lands violently on foreign soil. People, furniture, and aliens alike go flying across the room as the ship bounces once, then twice, before sliding to a jerky halt. You didn’t get the chance to hold on-you are sent airborne amidst the chaos, and are buffeted by the debris that fly by [OBJECT COLLISION][-5hp]. Once the ship finally stops spinning, your officer friend staggers to his feet, before helping you up as well. “Let’s leave this cursed ship.”\n\nYou follow him out of the Communications Room and into the deserted corridor. If there were any other survivors aboard, you doubt there are many left now, if at all. Bruised and exhausted, you stumble behind your companion. He seems to know his way through the ship, and leads you through several rooms and corridors, all of which are in varying stages of carnage. Despite his injuries, he moves with ease. As you cross the common room of the ship, you cough violently into the helmet of your space suit… `},
                             ]
                         }
                         // console.log(participants[memberId])
@@ -1763,7 +2022,7 @@ app.listen(3000, () => {
                                             payload += outcome.message
     
                                             if(currentState.poisoned == true){
-                                                payload += `\n\n*Your wounds feel like they're on fire...* [Poisoned][-1hp]`
+                                                payload += `\n\n*You're coughing badly. Like pretty bad.* [Poisoned][-1hp]`
                                             }
     
                                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
@@ -1776,17 +2035,14 @@ app.listen(3000, () => {
                                             if (previousState.health - Math.abs(outcome.result) <= 0){
                                                 console.log(member.displayName+" "+participants[memberId]+" Died to roll")
                                                 console.log(previousState.health - Math.abs(outcome.result))
-                                                if(outcome.result == -4){
-                                                    payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but it is too late for you. Your savaged arm begins burning with incredible pain, as the alien’s acidic saliva seems to eat away your skin and bones! You scream and scream, but there is nothing you nor your officer friend can do. You are faintly aware of his shouting words, and of yourself being lowered to the ground, but soon your entire vision turns red, and you slip away into unconsciousness...`
-                                                }
-                                                else if(outcome.result == -10){
-                                                    payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out...`
+                                                if(outcome.result == -5){
+                                                    payload += `You brace yourself for impact! The ship lands violently on foreign soil. People, furniture, and aliens alike go flying across the room as the ship bounces once, then twice, before sliding to a jerky halt. You didn’t get the chance to hold on-you are sent airborne amidst the chaos, and are buffeted by the debris that fly by [OBJECT COLLISION][-5hp]. However, when you land an excruciating pain suddenly lances through your stomach. Looking down, you see your hands stained red, and a wickedly sharp, jagged piece of glass and metal, broken from some of the debris, impaled through your abdomen. Panicking, you reach down and with both hands, attempt to yank it out despite your officer friend yelling at you to stop. The debris comes out of you, but so does an alarming flood of blood that pools onto the ground. The blood loss is too much. “Officer…” you whisper, “...I don’t feel so good…” You feel yourself pale and shiver, even as the world around you starts to spin and go white. The last thing you feel before everything fades away is your friend, gently lowering you to the ground… `
                                                 }
                                             } else {
                                                 console.log(member.displayName+" "+participants[memberId]+" Died to poison. Their previous health was: "+previousState.health)
                                                 console.log(previousState.health - Math.abs(outcome.result))
-                                                if(outcome.result == -4){
-                                                    payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into the arm you’d raised to defend yourself [BITTEN][-4hp] The officer beside you is quick to save you, and taking no chances this time, shoots him thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. \n\nShaken, you can only watch as the officer attempts to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing—but as you move to do so, you are wracked with a sudden cold tremor. You cough up hard into your hands and see green slime coating your fingers [POISONED][-1hp] You try to tell the officer, but are overcome with another violent coughing fit and fall to your knees. More green slime splashes onto the floor as your insides seem to squeeze uncontrollably inside of you. The last thing you see before you black out are the boots of your officer friend, running to save you… `
+                                                if(outcome.result == -2){
+                                                    payload += `You brace yourself for impact! The ship lands violently on foreign soil. People, furniture, and aliens alike go flying across the room as the ship bounces once, then twice, before sliding to a jerky halt. You try to hold on, but lose your grip at the last second, and make a rough tumble across the room [TUMBLED][-2hp]. Your officer friend staggers to his feet, before helping you up as well. “Let’s leave this cursed ship.”\n\nYou  make to follow him out of the Communications Room when a hacking cough comes over you. He pauses to look back as your whole body is wracked with a violent fit, and you fall to your knees as you cough uncontrollably. You see blood speckled across the inside of your helmet. Panicking, you yank the helm from your head, just as a jolt of pain explodes in your stomach [POISONED][-1hp]. This time, you cough up a pool of blood as your lungs fill with fluid, along with something unnaturally green… You look up at your friend, even as you feel a strong wave of dizziness come over you. The last thing you feel before everything fades away is your friend, gently lowering you to the ground… `
                                                 }
                                             }
 
@@ -1802,17 +2058,17 @@ app.listen(3000, () => {
 
                                         // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
                                     } else if(currentState.rollResult == "SAVED"){
-                                        status = "RESURRECTED"
+                                        // status = "RESURRECTED"
 
-                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
+                                        // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
 
-                                        payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
+                                        // payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
 
-                                        if(currentState.poisoned == true){
-                                            payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
-                                        }
+                                        // if(currentState.poisoned == true){
+                                        //     payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
+                                        // }
 
-                                        payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                                        // payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
                                     }
 
                                 })
@@ -1833,16 +2089,16 @@ app.listen(3000, () => {
 
                     break
 
-                case '!bot so-r13':
-                    console.log("LIVE Deploying '!bot so-r13'")
-                    message.reply("LIVE Deploying '!bot so-r13'")
+                case '!bot so-r14':
+                    console.log("LIVE Deploying '!bot so-r14'")
+                    message.reply("LIVE Deploying '!bot so-r14'")
 
                     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
                         var payload = ``
                         var memberId = member.id
                         // CHANGE THE ROUND EVERY ROUND PLEASE.
-                        const round = 13
+                        const round = 14
                         var replyString
                         var currentState
                         var previousState
