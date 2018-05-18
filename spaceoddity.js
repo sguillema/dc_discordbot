@@ -2211,247 +2211,269 @@ app.listen(3000, () => {
 
                 //     break
 
-                case '!bot test so-r15':
-                    console.log("TEST Deploying '!bot test so-r15'")
-                    message.reply("TEST Deploying '!bot test so-r15'")
+                // case '!bot test so-r15':
+                //     console.log("TEST Deploying '!bot test so-r15'")
+                //     message.reply("TEST Deploying '!bot test so-r15'")
 
-                    message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+                //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
 
-                        var payload = ``
-                        var memberId = member.id
-                        // CHANGE THE ROUND EVERY ROUND PLEASE.
-                        const round = 15
-                        var replyString
-                        var currentState
-                        var previousState
-                        var outcomes = {
-                            outcomes: [
-                                {"range": [1, 2], "result": -10, "status": "DEAD", "message": `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-10hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`},
-                                {"range": [3, 6], "result": -2, "status": "HANGING IN THERE", "message": `The combination of poison gas and your injuries have taken its toll, but it looks like you’re still hanging in there! The coughing doesn’t seem to be anything too serious... The officer pauses in his long strides to helpfully sling your arm over his shoulders. You both continue forward at a gratefully slower but pace.\n\nFinally,  you reach the main door of the ship. After swiping his security card, the door begins to open, letting in a flood of light into the chamber. Despite your unease, you feel a great sense of relief to see solid land beyond the ramp. “After you,” the officer says, gesturing forwards. You are about to take a step forward, but at the last moment, you hesitate… `},
-                            ]
-                        }
-                        // console.log(participants[memberId])
-                        if (!!participants[memberId] || participants[memberId] == 0){
-                        // if (participants[memberId] == 21){
+                //         var payload = ``
+                //         var memberId = member.id
+                //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                //         const round = 15
+                //         var replyString
+                //         var currentState
+                //         var previousState
+                //         var outcomes = {
+                //             outcomes: [
+                //                 {"range": [1, 2], "result": -10, "status": "DEAD", "message": `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-10hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`},
+                //                 {"range": [3, 6], "result": -2, "status": "HANGING IN THERE", "message": `The combination of poison gas and your injuries have taken its toll, but it looks like you’re still hanging in there! The coughing doesn’t seem to be anything too serious... The officer pauses in his long strides to helpfully sling your arm over his shoulders. You both continue forward at a gratefully slower but pace.\n\nFinally,  you reach the main door of the ship. After swiping his security card, the door begins to open, letting in a flood of light into the chamber. Despite your unease, you feel a great sense of relief to see solid land beyond the ramp. “After you,” the officer says, gesturing forwards. You are about to take a step forward, but at the last moment, you hesitate… `},
+                //             ]
+                //         }
+                //         // console.log(participants[memberId])
+                //         if (!!participants[memberId] || participants[memberId] == 0){
+                //         // if (participants[memberId] == 21){
                             
-                            console.log("Exists -- "+member.displayName)
-                            if(results.players[participants[memberId]].history.length >= round){
-                                currentState = results.players[participants[memberId]].history[round - 1]
-                                previousState = results.players[participants[memberId]].history[round - 2]
-                                // console.log(currentState)
-                                // console.log(currentState.health+`\n`)
-                                var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-                                var health = currentState.health
-                                var status = ''
+                //             console.log("Exists -- "+member.displayName)
+                //             if(results.players[participants[memberId]].history.length >= round){
+                //                 currentState = results.players[participants[memberId]].history[round - 1]
+                //                 previousState = results.players[participants[memberId]].history[round - 2]
+                //                 // console.log(currentState)
+                //                 // console.log(currentState.health+`\n`)
+                //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                //                 var health = currentState.health
+                //                 var status = ''
 
                                 
-                                outcomes.outcomes.forEach((outcome)=>{
-                                    if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
-                                        status = outcome.status
-                                        if(currentState.alive == false){
-                                            status = "DEAD"
-                                        }
+                //                 outcomes.outcomes.forEach((outcome)=>{
+                //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                //                         status = outcome.status
+                //                         if(currentState.alive == false){
+                //                             status = "DEAD"
+                //                         }
                                         
-                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
 
-                                        if(currentState.alive == true){
+                //                         if(currentState.alive == true){
 
-                                            if( currentState.item == "pencil") {
-                                                payload += `\n> You have a Golden Pencil!`
-                                            }
+                //                             if( currentState.item == "pencil") {
+                //                                 payload += `\n> You have a Golden Pencil!`
+                //                             }
     
-                                            payload += `\n\n--------\n\nUPDATE: \n`
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
     
-                                            payload += outcome.message
+                //                             payload += outcome.message
     
-                                            if(currentState.poisoned == true){
-                                                payload += `\n\n*...* [Poisoned][-1hp]`
-                                            }
+                //                             if(currentState.poisoned == true){
+                //                                 payload += `\n\n*...* [Poisoned][-1hp]`
+                //                             }
     
-                                            payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                //                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
 
-                                        } else if(currentState.alive == false){
+                //                         } else if(currentState.alive == false){
 
-                                            payload += `\n\n--------\n\nUPDATE: \n`
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
                                             
-                                            // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
-                                            if (previousState.health - Math.abs(outcome.result) <= 0){
-                                                console.log(member.displayName+" "+participants[memberId]+" Died to roll")
-                                                console.log(previousState.health - Math.abs(outcome.result))
-                                                if(outcome.result == -10){
-                                                    payload += `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-`+previousState.health+`hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`
-                                                }
-                                            } else {
-                                                console.log(member.displayName+" "+participants[memberId]+" Died to poison. Their previous health was: "+previousState.health)
-                                                console.log(previousState.health - Math.abs(outcome.result))
-                                                if(outcome.result == -10){
-                                                    payload += `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-`+previousState.health+`hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`
-                                                }
-                                            }
+                //                             // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
+                //                             if (previousState.health - Math.abs(outcome.result) <= 0){
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to roll")
+                //                                 console.log(previousState.health - Math.abs(outcome.result))
+                //                                 if(outcome.result == -10){
+                //                                     payload += `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-`+previousState.health+`hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`
+                //                                 }
+                //                             } else {
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to poison. Their previous health was: "+previousState.health)
+                //                                 console.log(previousState.health - Math.abs(outcome.result))
+                //                                 if(outcome.result == -10){
+                //                                     payload += `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-`+previousState.health+`hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`
+                //                                 }
+                //                             }
 
-                                            payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
+                //                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
 
-                                        }
+                //                         }
 
-                                    }
-                                    else if(currentState.rollResult == "lowest"){
-                                        // status = "DEAD"
+                //                     }
+                //                     else if(currentState.rollResult == "lowest"){
+                //                         // status = "DEAD"
 
-                                        // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+                //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
 
-                                        // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
-                                    } else if(currentState.rollResult == "SAVED"){
-                                        // status = "RESURRECTED"
+                //                         // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
+                //                     } else if(currentState.rollResult == "SAVED"){
+                //                         // status = "RESURRECTED"
 
-                                        // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
+                //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
 
-                                        // payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
+                //                         // payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
 
-                                        // if(currentState.poisoned == true){
-                                        //     payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
-                                        // }
+                //                         // if(currentState.poisoned == true){
+                //                         //     payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
+                //                         // }
 
-                                        // payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
-                                    }
+                //                         // payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                //                     }
 
-                                })
+                //                 })
                                 
-                                // Send payload
-                                // member.send(payload)
-                                message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
-                            } else {
-                                message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
-                            }
-                        } else {
-                            console.log("FAILED -- "+member.displayName)
-                            message.channel.send("Round "+round+" Update failed for "+member.displayName)
-                        }
-                    })
+                //                 // Send payload
+                //                 // member.send(payload)
+                //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+payload)
+                //             } else {
+                //                 message.channel.send("Round "+round+" Update: (Player #"+participants[memberId]+") "+member.displayName+`\n`+`**THEY DIED x_x**`)
+                //             }
+                //         } else {
+                //             console.log("FAILED -- "+member.displayName)
+                //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                //         }
+                //     })
 
-                    message.reply("Test complete!")
+                //     message.reply("Test complete!")
 
+                //     break
+
+                // case '!bot so-r15':
+                //     console.log("LIVE Deploying '!bot so-r15'")
+                //     message.reply("LIVE Deploying '!bot so-r15'")
+
+                //     message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
+
+                //         var payload = ``
+                //         var memberId = member.id
+                //         // CHANGE THE ROUND EVERY ROUND PLEASE.
+                //         const round = 15
+                //         var replyString
+                //         var currentState
+                //         var previousState
+                //         var outcomes = {
+                //             outcomes: [
+                //                 {"range": [1, 2], "result": -10, "status": "DEAD", "message": `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-10hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`},
+                //                 {"range": [3, 6], "result": -2, "status": "HANGING IN THERE", "message": `The combination of poison gas and your injuries have taken its toll, but it looks like you’re still hanging in there! The coughing doesn’t seem to be anything too serious... The officer pauses in his long strides to helpfully sling your arm over his shoulders. You both continue forward at a gratefully slower but pace.\n\nFinally,  you reach the main door of the ship. After swiping his security card, the door begins to open, letting in a flood of light into the chamber. Despite your unease, you feel a great sense of relief to see solid land beyond the ramp. “After you,” the officer says, gesturing forwards. You are about to take a step forward, but at the last moment, you hesitate… `},
+                //             ]
+                //         }
+                //         // console.log(participants[memberId])
+                //         if (!!participants[memberId] || participants[memberId] == 0){
+                            
+                //             console.log("Exists -- "+member.displayName)
+                //             if(results.players[participants[memberId]].history.length >= round){
+                //                 currentState = results.players[participants[memberId]].history[round - 1]
+                //                 previousState = results.players[participants[memberId]].history[round - 2]
+                //                 // console.log(currentState)
+                //                 // console.log(currentState.health+`\n`)
+                //                 var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                //                 var health = currentState.health
+                //                 var status = ''
+
+                                
+                //                 outcomes.outcomes.forEach((outcome)=>{
+                //                     if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
+                //                         status = outcome.status
+                //                         if(currentState.alive == false){
+                //                             status = "DEAD"
+                //                         }
+                                        
+                //                         payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
+
+                //                         if(currentState.alive == true){
+
+                //                             if( currentState.item == "pencil") {
+                //                                 payload += `\n> You have a Golden Pencil!`
+                //                             }
+    
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+    
+                //                             payload += outcome.message
+    
+                //                             if(currentState.poisoned == true){
+                //                                 payload += `\n\n*...* [Poisoned][-1hp]`
+                //                             }
+    
+                //                             payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+
+                //                         } else if(currentState.alive == false){
+
+                //                             payload += `\n\n--------\n\nUPDATE: \n`
+                                            
+                //                             // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
+                //                             if (previousState.health - Math.abs(outcome.result) <= 0){
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to roll")
+                //                                 console.log(previousState.health - Math.abs(outcome.result))
+                //                                 if(outcome.result == -10){
+                //                                     payload += `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-`+previousState.health+`hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`
+                //                                 }
+                //                             } else {
+                //                                 console.log(member.displayName+" "+participants[memberId]+" Died to poison. Their previous health was: "+previousState.health)
+                //                                 console.log(previousState.health - Math.abs(outcome.result))
+                //                                 if(outcome.result == -10){
+                //                                     payload += `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-`+previousState.health+`hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`
+                //                                 }
+                //                             }
+
+                //                             payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
+
+                //                         }
+
+                //                     }
+                //                     else if(currentState.rollResult == "lowest"){
+                //                         // status = "DEAD"
+
+                //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
+
+                //                         // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
+                //                     } else if(currentState.rollResult == "SAVED"){
+                //                         // status = "RESURRECTED"
+
+                //                         // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
+
+                //                         // payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
+
+                //                         // if(currentState.poisoned == true){
+                //                         //     payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
+                //                         // }
+
+                //                         // payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
+                //                     }
+
+                //                 })
+                                
+                //                 // Send payload
+                //                 member.send(payload)
+                //                 message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
+                //             } else {
+                //                 // Alternative response if player has died previously.
+                //                 message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
+                //             }
+                //         } else {
+                //             console.log("FAILED -- "+member.displayName)
+                //             message.channel.send("Round "+round+" Update failed for "+member.displayName)
+                //         }
+                //     })
+
+                //     message.reply("LIVE Deploy complete!")
+
+                //     break
+
+                case '!bot test so-rfinal test':
+                    message.channel.send(
+                        `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: FINAL ROUND \n# HP: 0/25\n# STATUS: DEAD\n\n--------\n\nUPDATE: \nYou catch a sudden movement out of the corner of your eye-then a loud gunshot, followed by a blinding flash that whizzes towards you. You see the officer who has been by your side the entire journey, turn slowly to look at you in horror as you sink slowly to the ground, your hand clutching your bloodied abdomen [ONE HIT K.O.][-25hp]. You are faintly aware of him shouting and scanning the surrounding wilderness, but only silence answers him. Whoever had shot you is long gone now.\n\nYou feel a pressure on your stomach as the officer frantically attempts to stem the bleeding, but you can feel yourself already slipping away. As your vision begins to fade, you whisper that you wish you didn’t have to leave him alone, here on this alien planet. After all you’ve been through together, you think it is cruel to have had to die here, when you were so close to surviving. But as the world begins to fade to black, you feel a strong sense of peace and relief that it is finally over. The last thing you hear is the officer, quietly murmuring, “Thank you, my friend.”\n\n\n\n*Game over! Better luck next time!*\`\`\`\n\nAnd so ends the tale of <@166428879966306304> Thank you for participating!...`
+                    )
+                    message.channel.send(
+                        `*Meanwhile in an alternate reality...*\n\n<@167597877084946432> steps out of the ship...\n\n\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: FINAL ROUND \n# HP: 6/25\n# STATUS: LAST ONE STANDING\n\n--------\n\nUPDATE: \nYou catch sudden movement out of the corner of your eye and pull away just in time. You hear a loud gunshot, followed by a blinding flash that whizzes by you. You turn in horror to see the officer who had been with you the entire journey sink slowly to the ground, his hand clutching his bloodied abdomen.\n\nWhen you turn back to see where the gunshot came from, there is only stillness in the wilderness beyond. Whoever it was, they are long-gone now. Shakily, you kneel down next to your friend, but he is sadly still. Alone on this alien planet, you decide you need all the information you can get, and go through the various pockets of his uniform. You find various materials, such as his ID card, a packet of chewing gum, a music player and an oddly official-looking document, carefully folded into his top pocket. A sense of dread settles deep into you as you read the letter, but you have no choice except to pocket it, take his firearm and slowly make your way down the ramp of the ship. Whoever he was doesn’t matter now. Now, it is just you and the world.\`\`\`\n\nAnd that marks the end of the Space Oddity Journey!`
+                    )
+                    message.react('👌')
+                    message.reply('TEST COMPLETED!')
                     break
 
-                case '!bot so-r15':
-                    console.log("LIVE Deploying '!bot so-r15'")
-                    message.reply("LIVE Deploying '!bot so-r15'")
-
-                    message.guild.roles.get(spaceoddityMembers).members.forEach((member)=>{
-
-                        var payload = ``
-                        var memberId = member.id
-                        // CHANGE THE ROUND EVERY ROUND PLEASE.
-                        const round = 15
-                        var replyString
-                        var currentState
-                        var previousState
-                        var outcomes = {
-                            outcomes: [
-                                {"range": [1, 2], "result": -10, "status": "DEAD", "message": `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-10hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`},
-                                {"range": [3, 6], "result": -2, "status": "HANGING IN THERE", "message": `The combination of poison gas and your injuries have taken its toll, but it looks like you’re still hanging in there! The coughing doesn’t seem to be anything too serious... The officer pauses in his long strides to helpfully sling your arm over his shoulders. You both continue forward at a gratefully slower but pace.\n\nFinally,  you reach the main door of the ship. After swiping his security card, the door begins to open, letting in a flood of light into the chamber. Despite your unease, you feel a great sense of relief to see solid land beyond the ramp. “After you,” the officer says, gesturing forwards. You are about to take a step forward, but at the last moment, you hesitate… `},
-                            ]
-                        }
-                        // console.log(participants[memberId])
-                        if (!!participants[memberId] || participants[memberId] == 0){
-                            
-                            console.log("Exists -- "+member.displayName)
-                            if(results.players[participants[memberId]].history.length >= round){
-                                currentState = results.players[participants[memberId]].history[round - 1]
-                                previousState = results.players[participants[memberId]].history[round - 2]
-                                // console.log(currentState)
-                                // console.log(currentState.health+`\n`)
-                                var roundFormatted = (round).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-                                var health = currentState.health
-                                var status = ''
-
-                                
-                                outcomes.outcomes.forEach((outcome)=>{
-                                    if( currentState.rollResult >= outcome.range[0] && currentState.rollResult <= outcome.range[1] ){
-                                        status = outcome.status
-                                        if(currentState.alive == false){
-                                            status = "DEAD"
-                                        }
-                                        
-                                        payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status
-
-                                        if(currentState.alive == true){
-
-                                            if( currentState.item == "pencil") {
-                                                payload += `\n> You have a Golden Pencil!`
-                                            }
-    
-                                            payload += `\n\n--------\n\nUPDATE: \n`
-    
-                                            payload += outcome.message
-    
-                                            if(currentState.poisoned == true){
-                                                payload += `\n\n*...* [Poisoned][-1hp]`
-                                            }
-    
-                                            payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
-
-                                        } else if(currentState.alive == false){
-
-                                            payload += `\n\n--------\n\nUPDATE: \n`
-                                            
-                                            // This checks if the player died from poison by checking if the roll result set them to 0 health. If it doesn't, then the player died to the poison.
-                                            if (previousState.health - Math.abs(outcome.result) <= 0){
-                                                console.log(member.displayName+" "+participants[memberId]+" Died to roll")
-                                                console.log(previousState.health - Math.abs(outcome.result))
-                                                if(outcome.result == -10){
-                                                    payload += `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-`+previousState.health+`hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`
-                                                }
-                                            } else {
-                                                console.log(member.displayName+" "+participants[memberId]+" Died to poison. Their previous health was: "+previousState.health)
-                                                console.log(previousState.health - Math.abs(outcome.result))
-                                                if(outcome.result == -10){
-                                                    payload += `The combination of poison gas and your injuries have taken its toll, and you cough what looks to be a mixture of blood and green goop across the inside of your helmet [YOUR BODY GIVES UP][-`+previousState.health+`hp]. The officer pauses in his long strides and comes back to help you as you frantically pull the helmet off. You are wracked with another violent coughing fit; your lungs feel like they’re on fire. You hear the officer peppering you with worried questions and helping you to the ground, but your throat suddenly constricts and you seem to choke on air. Your scratch at your neck, unable to breathe, gasping and clawing, and you think that really, after all this, this is the worst way to die. But then, as your vision begins to dim and the officer swims in and out of your vision... you think, at least you didn’t die alone.`
-                                                }
-                                            }
-
-                                            payload += `\n\n\n\n*Game over! Better luck next time!*\`\`\``
-
-                                        }
-
-                                    }
-                                    else if(currentState.rollResult == "lowest"){
-                                        // status = "DEAD"
-
-                                        // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n\n--------\n\nUPDATE: \n`
-
-                                        // payload += `The pirates’ attention turns in surprise to the two of you, as you stand panting at the door. Exhausted from your sudden sprint, neither of you were prepared for this. You exchange glances too late. After all you’d been through together, it was a little sad it would end like this.\n\nIt happened like in the movies. You heard the gunshots but nothing else, the sound ringing in your ears with an empty finality. You barely felt the pain to [Shot][`+outcome.result+`]. The world tilted and your knees hit the ground, a calming fog beginning to creep into all your senses. And as you lay on the cold floor, your vision slowly beginning to darken, you see your officer friend smile at you from where he lay, bleeding out. You think that at least, you didn’t die alone… \n\n\n\n*Game over! Better luck next time!*\`\`\``
-                                    } else if(currentState.rollResult == "SAVED"){
-                                        // status = "RESURRECTED"
-
-                                        // payload = `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: `+roundFormatted+` \n# HP: `+currentState.health+`/25\n# STATUS: `+status+`\n> The pencil appears to be useless now... (ability consumed)\n\n--------\n\nUPDATE: \n`
-
-                                        // payload += `You only have moments to make your decision. Unfortunately, the Captain also seems to notice your deliberation. He stops talking abruptly, his nervous demeanor turning into an eerie calmness as he smirks. Then he suddenly lunges towards you, his head mutating horrifically into that of an unknown species! You stumble back, but not fast enough—his razor sharp teeth sink deep into your neck [SAVAGED][-10hp] You manage to scream for half a second before the monster jerks its head abruptly to the side, instantly tearing your throat out…\n\n… For some reason, you can still hear yourself screaming. You look across to see your officer friend staring in shock at you. When you look down, you see you are enveloped in a warm, golden glow that appears to be coming from… the Golden Pencil you have stashed in your pocket! [RESURRECTED][IMMUNITY FOR ONE ROUND] In fact, when you touch your throat, it seems to have magically healed back together. Was this the power of the object from your homeworld?\n\nThe officer beside you is quick to react after that, and taking no chances this time, shoots the alien thrice. The body drops to the floor in a writhing mass of alien flesh, but the officer barely stops to look. He gives you a relieved shake of his head before turning back to the control panel to attempt to land the ship. He is eerily calm now, considering all the things that have happened so far. He delivers commands to the remaining Communications team with ease, before briskly telling you to brace yourself for the landing… `
-
-                                        // if(currentState.poisoned == true){
-                                        //     payload += `\n\n*The site of the bite, though healed, feels like it's on fire.* [Poisoned][-1hp]`
-                                        // }
-
-                                        // payload += `\n\n\n\n*Tune in again in the next three days for the next update!*\`\`\``
-                                    }
-
-                                })
-                                
-                                // Send payload
-                                member.send(payload)
-                                message.channel.send("Round "+round+" Update sent successfully to (Player #"+participants[memberId]+") "+member.displayName)
-                            } else {
-                                // Alternative response if player has died previously.
-                                message.channel.send("Round "+round+" Update was not sent because (Player #"+participants[memberId]+") "+member.displayName+" is **DEAD**")
-                            }
-                        } else {
-                            console.log("FAILED -- "+member.displayName)
-                            message.channel.send("Round "+round+" Update failed for "+member.displayName)
-                        }
-                    })
-
-                    message.reply("LIVE Deploy complete!")
-
+                case '!bot test so-rfinal':
+                    client.channels.get(spaceoddityChannel).send(
+                        `\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: FINAL ROUND \n# HP: 0/25\n# STATUS: DEAD\n\n--------\n\nUPDATE: \nYou catch a sudden movement out of the corner of your eye-then a loud gunshot, followed by a blinding flash that whizzes towards you. You see the officer who has been by your side the entire journey, turn slowly to look at you in horror as you sink slowly to the ground, your hand clutching your bloodied abdomen [ONE HIT K.O.][-25hp]. You are faintly aware of him shouting and scanning the surrounding wilderness, but only silence answers him. Whoever had shot you is long gone now.\n\nYou feel a pressure on your stomach as the officer frantically attempts to stem the bleeding, but you can feel yourself already slipping away. As your vision begins to fade, you whisper that you wish you didn’t have to leave him alone, here on this alien planet. After all you’ve been through together, you think it is cruel to have had to die here, when you were so close to surviving. But as the world begins to fade to black, you feel a strong sense of peace and relief that it is finally over. The last thing you hear is the officer, quietly murmuring, “Thank you, my friend.”\n\n\n\n*Game over! Better luck next time!*\`\`\`\n\nAnd so ends the tale of <@166428879966306304> Thank you for participating!...`
+                    )
+                    client.channels.get(spaceoddityChannel).send(
+                        `*Meanwhile in an alternate reality...*\n\n<@167597877084946432> steps out of the ship...\n\n\`\`\`md\n**A SPACE ODDITY UPDATE**\n\n# EVENT: FINAL ROUND \n# HP: 6/25\n# STATUS: LAST ONE STANDING\n\n--------\n\nUPDATE: \nYou catch sudden movement out of the corner of your eye and pull away just in time. You hear a loud gunshot, followed by a blinding flash that whizzes by you. You turn in horror to see the officer who had been with you the entire journey sink slowly to the ground, his hand clutching his bloodied abdomen.\n\nWhen you turn back to see where the gunshot came from, there is only stillness in the wilderness beyond. Whoever it was, they are long-gone now. Shakily, you kneel down next to your friend, but he is sadly still. Alone on this alien planet, you decide you need all the information you can get, and go through the various pockets of his uniform. You find various materials, such as his ID card, a packet of chewing gum, a music player and an oddly official-looking document, carefully folded into his top pocket. A sense of dread settles deep into you as you read the letter, but you have no choice except to pocket it, take his firearm and slowly make your way down the ramp of the ship. Whoever he was doesn’t matter now. Now, it is just you and the world.\`\`\`\n\nAnd that marks the end of the Space Oddity Journey!`
+                    )
+                    message.reply('LIVE Deploy complete!')
                     break
+                
                 }
                 console.log(message.author.username)
             }
